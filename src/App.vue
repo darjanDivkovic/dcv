@@ -11,8 +11,8 @@
     
     <section id="footer-section">
       <div>
-        <img src="@/assets/small_links/linked_in_link.png" alt="" class="link linkedin">
-        <img src="@/assets/small_links/github_link.png" alt="" class="link github">
+        <img src="@/assets/small_links/linked_in_link.png" alt="" class="link linkedin" @click="goToLinkedIn">
+        <img src="@/assets/small_links/github_link.png" alt="" class="link github" @click="goToGitHub">
       </div>
       <nav id="navbar">
         <router-link v-for="(page, index) in PAGES" 
@@ -20,9 +20,7 @@
                      :to=createLink(page)
                      class="router-link"
                      :class="{'active': isActive(PAGE_NAMES[index])}"
-                     @click="handlePageClick(page)">
-                     {{ PAGE_NAMES[index] }}
-                    </router-link>
+                     @click="handlePageClick(page)">{{ PAGE_NAMES[index] }}</router-link>
                      
         
         
@@ -93,6 +91,14 @@ export default {
     */
   },
   methods: {
+    goToLinkedIn() {
+      const URL = 'https://www.linkedin.com/in/darjan-divkovi%C4%87-171386163/'
+      window.open(URL, '_blank')
+    },  
+    goToGitHub() {
+      const URL = 'https://github.com/darjanDivkovic'
+      window.open(URL, '_blank')
+    },  
     isActive(route) {
       return this.$route.name === route
     },
@@ -207,11 +213,13 @@ export default {
   transition: 0.3 all
   &.linkedin
     background-color: rgba(0,0,0,0)
-    border-radius: 0 
   &.github
-    border-radius: 50%
+    height: 31px 
     margin-left: 15px
+    background-position: center
+    background-size: contain
     background-color: rgba(0,0,0,0)
+    border-radius: 35px
 
   &:hover
     box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5)
