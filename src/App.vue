@@ -1,17 +1,23 @@
 <template>
   <div id="app">
+    <div class="header">
+      <DLogo />
+    </div>
+    <router-view/>
+    <p>{{  page_position }}</p>
     <nav>
       <router-link to="/">HOME</router-link> |
       <router-link to="/skills">ABOUT</router-link>
       <router-link to="/experience">EXPERIENCE</router-link>
     </nav>
-    <router-view/>
-    <p>{{  page_position }}</p>
   </div>
 </template>
 
 <script>
+import DLogo from '@/components/common/DLogo.vue'
+
 const PAGES = ['', 'skills', 'experience'];
+const COLORS = [ '#301E67' ]
 const PAUSE_TIME_MILIS = 1500;
 
 export default {
@@ -24,6 +30,9 @@ export default {
       touchEndY: null,
     }
   },
+  components: {
+    DLogo,
+  },  
   methods: {
   // HANDLE SCROLL UP AND DOWN
   // ************************
@@ -68,9 +77,11 @@ export default {
     checkDirection() {
     if (this.touchEndY < this.touchStartY) {
       console.log('swipe up')
+      this.handleScrollDown();
     }
     if (this.touchEndY > this.touchStartY) {
       console.log('down')
+      this.handleScrollUp();
     }
     },
   },
@@ -92,11 +103,19 @@ export default {
 }
 </script>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  height: 100%;
-  width: 100%;
-}
+<style lang="sass">
+@font-face
+  font-family: 'secondary'
+  src: url(../public/MontserratAlternates.ttf) format("truetype")
+
+@font-face
+  font-family: 'primary'
+  src: url(../public/Montserrat.ttf) format("truetype")
+
+#app 
+  font-family: 'primary'
+  height: 100%
+  padding: 50px
+  width: 100%
 
 </style>

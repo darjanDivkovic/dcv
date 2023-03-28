@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'primary';
+    src: url('/portfolio/public/Montserrat.ttf');
+}
+
+@font-face {
+    font-family: 'secondary';
+    src: url('/portfolio/public/MontserratAlternates.ttf');
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -6,4 +16,5 @@ body {
     overflow: hidden;
     overflow-y: none;
     overflow-x: none;
+    background-color: #121212;
 }
