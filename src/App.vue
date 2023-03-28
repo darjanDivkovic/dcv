@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="header">
-      <DLogo />
+      <DLogo :color="currentLogoColor"/>
     </div>
     <router-view/>
     <p>{{  page_position }}</p>
@@ -17,7 +17,20 @@
 import DLogo from '@/components/common/DLogo.vue'
 
 const PAGES = ['', 'skills', 'experience'];
-const COLORS = [ '#301E67' ]
+const COLORS = [ 
+  {
+    hex: '#301E67',
+    decimal: 3153511
+  },
+  {
+    hex: '#0E236F',
+    decimal: 926575
+  },
+  {
+    hex: '#FFB754',
+    decimal: 16758612
+  },
+]
 const PAUSE_TIME_MILIS = 1500;
 
 export default {
@@ -32,7 +45,12 @@ export default {
   },
   components: {
     DLogo,
-  },  
+  }, 
+  computed: {
+    currentLogoColor() {
+      return COLORS[this.page_position].decimal
+    }
+  },
   methods: {
   // HANDLE SCROLL UP AND DOWN
   // ************************
