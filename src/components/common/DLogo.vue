@@ -79,6 +79,7 @@ export default {
 <style lang="sass" scoped>
 #logo
   display: flex
+  margin-left: -10px
   flex-direction: row
   width: max-content
   & > div

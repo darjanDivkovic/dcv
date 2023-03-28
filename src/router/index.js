@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import SkillsView from '../views/SkillsView.vue'
 import ExperienceView from '../views/ExperienceView.vue'
+import RecommendationsView from '../views/RecommendationsView.vue'
+import ScheduleATalkView from '../views/ScheduleATalkView.vue'
 
 Vue.use(VueRouter)
 
@@ -21,6 +23,16 @@ const routes = [
     path: '/experience',
     name: 'experience',
     component: ExperienceView
+  },
+  {
+    path: '/recommendations',
+    name: 'recommendations',
+    component: RecommendationsView
+  },
+  {
+    path: '/schedule_a_talk',
+    name: 'schedule a talk',
+    component: ScheduleATalkView,
   }
 ]
 
