@@ -38,7 +38,9 @@ export default {
   align-items: center 
   & > h1
     text-align: center
-    color: rgba(255, 255, 255, 0.8)
+    background: -webkit-linear-gradient(30deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.4) 100%)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
     font-size: 35px
     line-height: 45px
   & > p

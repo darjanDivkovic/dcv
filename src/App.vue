@@ -213,13 +213,13 @@ export default {
 
   
 #header-section
-  padding: 30px 30px 0 30px
+  padding: 20px 30px 0 30px
   display: flex
   justify-content: space-between
   align-items: center
 #body-section
   flex-grow: 1
-  height: calc(100% - 150px)
+  height: calc(100% - 140px)
   padding: 20px 20px 0 30px
   overflow: hidden
 #footer-section
@@ -245,7 +245,7 @@ export default {
 
   &.github
     height: 15px 
-    margin-left: 15px
+    margin-left: 10px
     background-position: center
     background-size: contain
     background-color: rgba(0,0,0,0)
@@ -264,7 +264,7 @@ export default {
   width: max-content
   font-weight: 500
   text-transform: uppercase
-  font-size: 12px
+  font-size: 10px
   cursor: pointer
   transform: scale(1)
   text-align: center

@@ -96,7 +96,6 @@ export default {
       font-size: 14px
       color: #fff
       font-family: primary
-      letter-spacing: 13px
 .position
   color: rgba(108,100,100,0.4)
   font-size: 10px
