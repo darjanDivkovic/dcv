@@ -241,10 +241,10 @@ export default {
   transition: all 0.3s 
   &.linkedin
     background-color: rgba(0,0,0,0)
-    height: 20px 
+    height: 15px 
 
   &.github
-    height: 20px 
+    height: 15px 
     margin-left: 15px
     background-position: center
     background-size: contain
