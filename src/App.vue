@@ -4,6 +4,7 @@
     <div id="sections-container">
         <div id="header-section">
           <DLogo :color="currentLogoColor"/>
+          <DButton text="Hire Me"/>
         </div>
     
         <div id="body-section">
@@ -31,8 +32,9 @@
 </template>
 
 <script>
-import DLogo from '@/components/common/DLogo.vue'
+import DLogo from '@/components/common/DLogo.vue';
 import DBackground from './components/common/DBackground.vue';
+import DButton from './components/common/DButton.vue';
 
 const PAGES = ['', 'skills', 'experience', 'recommendations', 'schedule_a_talk'];
 const PAGE_NAMES = ['home', 'skills', 'experience', 'recommendations', 'schedule a talk']
@@ -69,7 +71,7 @@ export default {
   data() {
     return {
       direction: null,
-      page_position: 0,
+      page_position: this.getPagePosition(),
       pause: false,
       touchStartY: null,
       touchEndY: null,
@@ -80,9 +82,11 @@ export default {
   components: {
     DLogo,
     DBackground,
+    DButton,
   }, 
   computed: {
     currentLogoColor() {
+      console.log('route nameee', COLORS.find(color => color.name === this.$route.name).decimal)
       return COLORS.find(color => color.name === this.$route.name).decimal
     }
     /*
@@ -93,6 +97,10 @@ export default {
     */
   },
   methods: {
+    getPagePosition() {
+      console.log('a', COLORS.findIndex(color => color.name === this.$route.name), typeof this.$route.name)
+      this.page_position = COLORS.findIndex(color => color === this.$route.name)
+    },
     goToLinkedIn() {
       const URL = 'https://www.linkedin.com/in/darjan-divkovi%C4%87-171386163/'
       window.open(URL, '_blank')
@@ -163,10 +171,9 @@ export default {
     },
   },
   mounted() {
-    console.log('ay')
-    console.log('ayy', window.location.pathname.slice(0,1), COLORS.findIndex(page => page.name === window.location.pathname))
-    const index = COLORS.findIndex(page => page.name === window.location.pathname.slice(0,1))
+    const index = COLORS.findIndex(page => page.name === this.$route.name)
     this.page_position =  index >= 0 ? index : 0
+    console.log
     window.addEventListener('wheel', this.handleWheel)
     window.addEventListener('touchstart', e => {
       this.touchStartY = e.changedTouches[0].screenY
@@ -206,7 +213,10 @@ export default {
 
   
 #header-section
-  padding: 30px 20px 0 30px
+  padding: 30px 30px 0 30px
+  display: flex
+  justify-content: space-between
+  align-items: center
 #body-section
   flex-grow: 1
   height: calc(100% - 150px)

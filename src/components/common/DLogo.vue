@@ -24,7 +24,7 @@ export default {
     },
     watch: {
         color(val) {
-            console.log(val)
+            console.log('yar', val)
             this.scene.remove(this.mesh)
             //this.init(val)
             this.createMesh(val)
@@ -72,7 +72,7 @@ export default {
     }
   },
   mounted() {
-      this.init(3153511);
+      this.init(this.color);
       this.animate();
   }
 }

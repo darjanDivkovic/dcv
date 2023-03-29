@@ -27,11 +27,18 @@ export default {
         }
     },
     mounted() {
-        this.breathe();  
+        this.breathe();
+        this.changeToNewPosition(this?.position);
     },
     watch: {
         position(val) {
-            switch(val) {
+           this.changeToNewPosition(val);
+        }
+    },
+    methods: {
+        changeToNewPosition(newPosition) {
+            console.log('ere!');
+            switch(newPosition) {
                 case 0:
                     console.log('going to first');
                     this.moveToPosition(PURPLE_GRADIENT, 0, 0, 0.5);
@@ -50,14 +57,11 @@ export default {
                     this.moveToPosition(GREEN_GRADIENT, -10, 40, 0.5);
                     break;
             } 
-        }
-    },
-    methods: {
+        },
         breathe() {
             gsap.fromTo('#circle', {transform: "scale(1)"}, 
             
                                    {transform: "scale(1.3)", duration: 1.5, repeat: -1, yoyo: true})
-            this.moveToPosition(PURPLE_GRADIENT, 0, -20, 0.5);
         },
         moveToPosition(gradient, xPosition, yPoistion, opacity) {
             const oldXPosition = this.xPosition
