@@ -31,7 +31,7 @@ export default {
   justify-content: center
   align-items: center 
 .content
-  margin-top: -5vh
+  margin-top: -7vh
   display: flex
   flex-direction: column
   justify-content: center
@@ -47,7 +47,7 @@ export default {
     text-align: center
     font-size: 10px
     line-height: 15px
-    color: rgba(255, 255, 255, 0.4)
+    color: rgba(255, 255, 255, 0.3)
     & > .purple-span
       color: #6639ED
       font-weight: 600

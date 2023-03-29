@@ -114,8 +114,7 @@ export default {
     height: 120vh
     width: 120vh
     top: -20%
-    left: 50%
-    transform: translateX(-50%) !important
+    left: calc(50% - 60vh)
     background: radial-gradient(circle, hsla(255, 55%, 26%, 0.5) 0%, hsla(0, 0%, 7%, 0.5) 70%)
     border-radius: 50%
 </style>

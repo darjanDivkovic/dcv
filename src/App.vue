@@ -239,6 +239,7 @@ export default {
 
 .link
   transition: all 0.3s 
+  background: rgba(0,0,0,0)
   &.linkedin
     background-color: rgba(0,0,0,0)
     height: 15px 
@@ -252,15 +253,16 @@ export default {
     border-radius: 35px
 
   &:hover
-    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5)
+    box-shadow: 0px 0px 9px rgba(255, 255, 255, 0.5)
+    
     cursor: pointer
-    filter: brightness(160%) 
+    filter: brightness(300%) 
 
 .router-link
   all: unset
   transition: all 0.3s
   padding: 0 15px
-  color: #6C6464
+  color: rgba(108,100,100, 0.3)
   width: max-content
   font-weight: 500
   text-transform: uppercase

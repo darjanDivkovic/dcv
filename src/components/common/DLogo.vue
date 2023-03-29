@@ -89,16 +89,16 @@ export default {
   height: 40px
   & > div
     font-family: 'secondary'
-    margin-left: 5px
-    line-height: 1
+    margin-left: 3px
+    line-height: 0.8
     & > p
       margin: 0
-      font-size: 14px
-      color: #fff
+      font-size: 13px
+      color: #e4e6eb
       font-family: primary
 .position
-  color: rgba(108,100,100,0.4)
-  font-size: 10px
+  color: rgba(108,100,100, 0.3)
+  font-size: 9px
 
 #container
   width: 37px
