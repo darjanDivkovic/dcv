@@ -1,37 +1,38 @@
 <template>
   <div id="app">
+    <DBackground :position="page_position"/>
+    <div id="sections-container">
+        <div id="header-section">
+          <DLogo :color="currentLogoColor"/>
+        </div>
     
-    <section id="header-section">
-      <DLogo :color="currentLogoColor"/>
-    </section>
-    
-    <section id="body-section">
-      <router-view/>
-    </section>
-    
-    <section id="footer-section">
-      <div>
-        <img src="@/assets/small_links/linked_in_link.png" alt="" class="link linkedin" @click="goToLinkedIn">
-        <img src="@/assets/small_links/github_link.png" alt="" class="link github" @click="goToGitHub">
-      </div>
-      <nav id="navbar">
-        <router-link v-for="(page, index) in PAGES" 
+        <div id="body-section">
+          <router-view/>
+        </div>
+        
+        <div id="footer-section">
+          <!-- ICONS GITHUB LINKED IN -->
+          <div>
+            <img src="@/assets/small_links/linked_in_link.png" alt="" class="link linkedin" @click="goToLinkedIn">
+            <img src="@/assets/small_links/github_link.png" alt="" class="link github" @click="goToGitHub">
+          </div>
+          <!-- PAGES NAVBAR -->
+          <nav id="navbar">
+            <router-link v-for="(page, index) in PAGES"
                      :key="page"
                      :to=createLink(page)
                      class="router-link"
                      :class="{'active': isActive(PAGE_NAMES[index])}"
                      @click="handlePageClick(page)">{{ PAGE_NAMES[index] }}</router-link>
-                     
-        
-        
-        
-      </nav>
-    </section>    
+          </nav>
+        </div>      
+    </div>
   </div>
 </template>
 
 <script>
 import DLogo from '@/components/common/DLogo.vue'
+import DBackground from './components/common/DBackground.vue';
 
 const PAGES = ['', 'skills', 'experience', 'recommendations', 'schedule_a_talk'];
 const PAGE_NAMES = ['home', 'skills', 'experience', 'recommendations', 'schedule a talk']
@@ -48,13 +49,13 @@ const COLORS = [
   },
   {
     name: 'experience',
-    hex: '#FFB754',
-    decimal: 16758612
+    hex: '#F37959',
+    decimal: 15956313
   },
   {
     name: 'recommendations',
-    hex: '#F37959',
-    decimal: 15956313
+    hex: '#FFB754',
+    decimal: 16758612
   },
   {
     name: 'schedule a talk',
@@ -78,6 +79,7 @@ export default {
   },
   components: {
     DLogo,
+    DBackground,
   }, 
   computed: {
     currentLogoColor() {
@@ -163,7 +165,8 @@ export default {
   mounted() {
     console.log('ay')
     console.log('ayy', window.location.pathname.slice(0,1), COLORS.findIndex(page => page.name === window.location.pathname))
-    this.page_position = COLORS.findIndex(page => page.name === window.location.pathname.slice(0,1))
+    const index = COLORS.findIndex(page => page.name === window.location.pathname.slice(0,1))
+    this.page_position =  index >= 0 ? index : 0
     window.addEventListener('wheel', this.handleWheel)
     window.addEventListener('touchstart', e => {
       this.touchStartY = e.changedTouches[0].screenY
@@ -191,30 +194,47 @@ export default {
 
 #app 
   font-family: 'primary'
-  padding: 50px
-  
+  position: relative
+  width: auto
+  max-height: 100%
+  min-height: 100%
 
-#navbar
-  position: absolute
-  left: 50%
-  transform: translateX(-50%)
-  width: max-content
+#sections-container
+  display:flex
+  flex-direction: column
+  height: 100vh
+
+  
 #header-section
+  padding: 30px 20px 0 30px
 #body-section
-  height: calc(100vh - 100px - 50px - 30px)
+  flex-grow: 1
+  height: calc(100% - 150px)
+  padding: 20px 20px 0 30px
   overflow: hidden
 #footer-section
   position: relative
   display: flex
+  padding: 20px 0 30px 30px
   flex-direction: row
   align-items: center
+
+
+#navbar
+  position: absolute
+  left: 50%
+  display: flex
+  flex-direction: row
+  transform: translateX(-50%)
 
 .link
   transition: 0.3 all
   &.linkedin
     background-color: rgba(0,0,0,0)
+    height: 20px 
+
   &.github
-    height: 31px 
+    height: 20px 
     margin-left: 15px
     background-position: center
     background-size: contain
@@ -229,15 +249,33 @@ export default {
 .router-link
   all: unset
   transition: all 0.3s
-  padding: 0 10px
+  padding: 0 15px
   color: #6C6464
+  width: max-content
   font-weight: 500
   text-transform: uppercase
-  font-size: 16px
+  font-size: 12px
   cursor: pointer
+  transform: scale(1)
   text-align: center
   &.active
-    font-size: 20px
+    transform: scale(1.3)
     color: rgba(255, 255, 255, 0.9)
-    text-decoration: underline
+
+@media (max-width: 965px)
+  #navbar
+    flex-direction: column
+    left: auto
+    width: calc(max-content + 20px)
+    height: calc(max-content + 20px)
+    right: -55px
+    bottom: 20px
+    padding: 0
+  .router-link
+    margin-left: auto
+    padding: 4px 0
+    font-size: 14px
+    text-align: right
+    &.active
+      transform: translateX(-2%)
 </style>

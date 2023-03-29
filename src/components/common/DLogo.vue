@@ -41,12 +41,14 @@ export default {
 
         this.scene = new Three.Scene();
         this.scene.background = new Three.Color( 1184274 );
-
+        
         this.createMesh(color);
         const light = new Three.AmbientLight( 0x404040 ); // soft white light
         this.scene.add( light );
-
-        this.renderer = new Three.WebGLRenderer({antialias: true});
+        this.scene.background = null;
+        this.renderer = new Three.WebGLRenderer({antialias: true, alpha: true});
+        this.renderer.setPixelRatio(window.devicePixelRatio)
+        this.renderer.setClearColor( 0x000000, 0 )
         this.renderer.setSize(container.clientWidth, container.clientHeight);
         container.appendChild(this.renderer.domElement);
 
@@ -84,15 +86,17 @@ export default {
   width: max-content
   & > div
     font-family: 'secondary'
-    margin-left: 13px
+    margin-left: 5px
+    line-height: 1
     & > p
       margin: 0
-      font-size: 24px
+      font-size: 16px
       color: #fff
 .position
-  color: rgba(108,100,100,0.5)
-  font-size: 16px
+  color: rgba(108,100,100,0.4)
+  font-size: 10px
 
 #container
   width: 37px
+  background: none
 </style>
