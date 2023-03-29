@@ -111,8 +111,8 @@ export default {
     width: 100%
 #circle
     position: absolute
-    height: 100vh
-    width: 100vh
+    height: 120vh
+    width: 120vh
     top: -20%
     left: 15%
     background: radial-gradient(circle, hsla(255, 55%, 26%, 0.5) 0%, hsla(0, 0%, 7%, 0.5) 70%)

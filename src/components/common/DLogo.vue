@@ -2,7 +2,7 @@
 <div id="logo">
     <div id="container"></div>
     <div>
-        <p>Darjan</p>
+        <p>DARJAN</p>
         <span class="position">Web Developer / UI | UX</span>
     </div>
 </div>
@@ -83,20 +83,26 @@ export default {
   display: flex
   margin-left: -10px
   flex-direction: row
+  justify-content: center
+  align-items: center
   width: max-content
+  height: 40px
   & > div
     font-family: 'secondary'
     margin-left: 5px
     line-height: 1
     & > p
       margin: 0
-      font-size: 16px
+      font-size: 14px
       color: #fff
+      font-family: primary
+      letter-spacing: 13px
 .position
   color: rgba(108,100,100,0.4)
   font-size: 10px
 
 #container
   width: 37px
+  min-height: 37px
   background: none
 </style>
