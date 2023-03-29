@@ -23,7 +23,7 @@
                      :to=createLink(page)
                      class="router-link"
                      :class="{'active': isActive(PAGE_NAMES[index])}"
-                     @click="handlePageClick(page)">{{ PAGE_NAMES[index] }}</router-link>
+                     @click.native.prevent="handlePageClick(page)">{{ PAGE_NAMES[index] }}</router-link>
           </nav>
         </div>      
     </div>
@@ -228,7 +228,7 @@ export default {
   transform: translateX(-50%)
 
 .link
-  transition: 0.3 all
+  transition: all 0.3s 
   &.linkedin
     background-color: rgba(0,0,0,0)
     height: 20px 
@@ -244,7 +244,7 @@ export default {
   &:hover
     box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5)
     cursor: pointer
-    filter: brightness(200%) 
+    filter: brightness(160%) 
 
 .router-link
   all: unset
@@ -268,13 +268,13 @@ export default {
     left: auto
     width: calc(max-content + 20px)
     height: calc(max-content + 20px)
-    right: -55px
-    bottom: 20px
+    right: -45px
+    bottom: 30px
     padding: 0
   .router-link
     margin-left: auto
     padding: 4px 0
-    font-size: 14px
+    font-size: 12px
     text-align: right
     &.active
       transform: translateX(-2%)
