@@ -213,7 +213,7 @@ export default {
 
   
 #header-section
-  padding: 20px 30px 0 30px
+  padding: 15px 30px 0 30px
   display: flex
   justify-content: space-between
   align-items: center
@@ -272,7 +272,7 @@ export default {
   text-align: center
   &.active
     transform: scale(1.3)
-    color: rgba(255, 255, 255, 0.9)
+    color: rgba(228, 230, 235, 1)
 
 @media (max-width: 965px)
   #navbar
