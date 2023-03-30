@@ -24,7 +24,6 @@ export default {
     },
     watch: {
         color(val) {
-            console.log('yar', val)
             this.scene.remove(this.mesh)
             //this.init(val)
             this.createMesh(val)
@@ -93,7 +92,9 @@ export default {
     line-height: 0.8
     & > p
       margin: 0
-      font-size: 13px
+      font-size: 12px
+      font-weight: 300
+      letter-spacing: 2px
       color: #e4e6eb
       font-family: primary
 .position

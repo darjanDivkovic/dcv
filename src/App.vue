@@ -86,19 +86,18 @@ export default {
   }, 
   computed: {
     currentLogoColor() {
-      console.log('route nameee', COLORS.find(color => color.name === this.$route.name).decimal)
       return COLORS.find(color => color.name === this.$route.name).decimal
     }
     /*
     currentLogoColor() {
-      console.log('this.', this.page_position)
+      //console.log('this.', this.page_position)
       return COLORS[this.page_position].decimal
     }
     */
   },
   methods: {
     getPagePosition() {
-      console.log('a', COLORS.findIndex(color => color.name === this.$route.name), typeof this.$route.name)
+      //console.log('a', COLORS.findIndex(color => color.name === this.$route.name), typeof this.$route.name)
       this.page_position = COLORS.findIndex(color => color === this.$route.name)
     },
     goToLinkedIn() {
@@ -116,14 +115,12 @@ export default {
       return `/${pageName}`
     },
     handlePageClick(page) {
-      console.log('hit', page)
       this.page_position = PAGES.indexOf(page)
     },
   // HANDLE SCROLL UP AND DOWN
   // ************************
 
     handleWheel(event) {
-      console.log('wheelin')
       if(!this.pause) {
         if (event.deltaY < 0) {
         // SCROLLING UP
@@ -161,11 +158,9 @@ export default {
     
     checkDirection() {
     if (this.touchEndY < this.touchStartY) {
-      console.log('swipe up')
       this.handleScrollDown();
     }
     if (this.touchEndY > this.touchStartY) {
-      console.log('down')
       this.handleScrollUp();
     }
     },
@@ -173,7 +168,6 @@ export default {
   mounted() {
     const index = COLORS.findIndex(page => page.name === this.$route.name)
     this.page_position =  index >= 0 ? index : 0
-    console.log
     window.addEventListener('wheel', this.handleWheel)
     window.addEventListener('touchstart', e => {
       this.touchStartY = e.changedTouches[0].screenY

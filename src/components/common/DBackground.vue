@@ -37,14 +37,11 @@ export default {
     },
     methods: {
         changeToNewPosition(newPosition) {
-            console.log('ere!');
             switch(newPosition) {
                 case 0:
-                    console.log('going to first');
                     this.moveToPosition(PURPLE_GRADIENT, 0, 0, 0.5);
                     break;
                 case 1: 
-                    console.log('going to second');
                     this.moveToPosition(BLUE_GRADIENT, 10, 10, 0.5);
                     break;
                 case 2:
@@ -68,7 +65,6 @@ export default {
             const oldYPosition = this.yPoistion
             const gradientColor = this.gradientColor
             const backgroundGradient = `hsla(0, 0%, 7%, ${opacity})`
-            console.log('aa', backgroundGradient)
 
             gsap.fromTo('#circle',
             {background: `radial-gradient(circle, ${gradientColor} 0%, ${BACKGROUND_GRADIENT} 70%)`,
