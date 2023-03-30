@@ -214,7 +214,7 @@ export default {
 #body-section
   flex-grow: 1
   height: calc(100% - 140px)
-  padding: 20px 20px 0 30px
+  padding: 20px 30px 0 30px
   overflow: hidden
 #footer-section
   position: relative

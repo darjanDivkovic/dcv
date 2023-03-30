@@ -103,6 +103,9 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+.skills
+  margin-top: 7%
+
 h1
   text-align: left
   width: 70%
