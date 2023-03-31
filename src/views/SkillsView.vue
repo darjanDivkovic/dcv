@@ -1,103 +1,76 @@
 <template>
   <div class="skills">
     <h1>Web developer with</br>plethora of Tech Skills</h1>
-    <div class="wrapper">
-    <div class="box">
-      <div class="img-box">
-        <img src="@/assets/skills/cucumber.svg" alt="">
-      </div>
-    </div>
-    <div class="box">
-      <div class="img-box">
-        <img src="@/assets/skills/tailwind.svg" alt="">
-      </div>
-    </div>
-    <div class="box">
-      <div class="img-box">
-      <img src="@/assets/skills/sass.svg" alt="">
-      </div>
-    </div>
-    <div class="box">
-      <div class="img-box">
-        <img src="@/assets/skills/css.svg" alt="">
-      </div>
-    </div>
-    <div class="box">
-      <div class="img-box">
-        <img src="@/assets/skills/js.svg" alt="">
-      </div>
-    </div>
-    <div class="box">
-      <div class="img-box">
-      <img src="@/assets/skills/vue.svg" alt="">
-      </div>
-    </div>
-    <div class="box">
-      <div class="img-box">
-      <img src="@/assets/skills/jquery.svg" alt="">
-      </div>
-    </div>
-    <div class="box">
-      <div class="img-box">
-      <img src="@/assets/skills/jira.svg" alt="">
-      </div>
-    </div>
-    <div class="box">
-      <div class="img-box">
-      <img src="@/assets/skills/docker.svg" alt="">
-      </div>
-    </div>
-    <div class="box">
-      <div class="img-box">
-      <img src="@/assets/skills/psql.svg" alt="">
-      </div>
-    </div>
+      <DInfiniteSlider :skills="SKILLS[0]"></DInfiniteSlider>
+      <DInfiniteSlider :skills="SKILLS[1]" class="lower"></DInfiniteSlider>
     </div>
   </div>
 </template>
 
 <script>
-import { gsap } from 'gsap'
-import { horizontalLoop } from '@/helpers/scroll-helper.js'
+import DInfiniteSlider from '@/components/common/DInfiniteSlider.vue'
+
+import CucumberIcon from '@/assets/skills/cucumber.svg'
+import TailwindIcon from '@/assets/skills/tailwind.svg'
+import SassIcon from '@/assets/skills/sass.svg'
+import CssIcon from '@/assets/skills/css.svg'
+import JsIcon from '@/assets/skills/js.svg'
+import VueIcon from '@/assets/skills/vue.svg'
+import JQueryIcon from '@/assets/skills/jquery.svg'
+import JiraIcon from '@/assets/skills/jira.svg'
+import DockerIcon from '@/assets/skills/docker.svg'
+import PsqlIcon from '@/assets/skills/psql.svg'
+
+import PugIcon from '@/assets/skills/pug.svg'
+import PythonIcon from '@/assets/skills/python.svg'
+import IconCss from '@/assets/skills/html.svg'
+import DjangoIcon from '@/assets/skills/django.svg'
+import ReactIcon from '@/assets/skills/react.svg'
+import GitIcon from '@/assets/skills/git.svg'
+import FigmaIcon from '@/assets/skills/figma.svg'
+import Linux from '@/assets/skills/linux.svg'
+import GitLab from '@/assets/skills/gitlab.svg'
+import GitHubIcon from '@/assets/skills/github.svg'
+
+
+const SKILLS_UPPER = [
+{ name: 'Cucumber', src: CucumberIcon},
+{ name: 'Tailwind', src: TailwindIcon},
+{ name: 'Sass', src: SassIcon},
+{ name: 'Css', src: CssIcon},
+{ name: 'Js', src: JsIcon},
+{ name: 'Vue', src: VueIcon},
+{ name: 'JQuery', src: JQueryIcon},
+{ name: 'Jira', src: JiraIcon},
+{ name: 'Docker', src: DockerIcon},
+{ name: 'Psql', src: PsqlIcon},
+]
+
+const SKILLS_LOWER = [
+{ name: 'Pug', src: PugIcon},
+{ name: 'Python', src: PythonIcon},
+{ name: 'Ico', src: IconCss},
+{ name: 'Django', src: DjangoIcon},
+{ name: 'React', src: ReactIcon},
+{ name: 'Git', src: GitIcon},
+{ name: 'Figma', src: FigmaIcon},
+{ name: 'Linux', src: Linux},
+{ name: 'GitLab', src: GitLab},
+{ name: 'GitHub', src: GitHubIcon},
+]
 
 export default {
   name: 'SkillsView',  
+  components: {
+    DInfiniteSlider
+  },
   data() {
     return {
-      boxes: null,
-      loop: null,
+      SKILLS: [
+        SKILLS_UPPER,
+        SKILLS_LOWER
+      ]
     }
-  },
-  methods: {
-    setBoxes() {
-      const boxes = gsap.utils.toArray('.box') 
-      this.boxes = boxes
-    },
-    setLoop(boxes) {
-      const loop = horizontalLoop(boxes, {
-        paused: false,
-        repeat: -1,
-        reversed: true,
-      })
-      this.loop = loop
-    },
-  },
-  watch: {
-    boxes(boxes) {
-      console.log('setting up loop with boxes', boxes)
-      this.setLoop(boxes)
-      console.log('set loop', this.loop)
-    },
-  },
-  async mounted() {
-  console.log('mounted')
-    this.setBoxes()
-    console.log('boxes', this.boxes)
-    console.log('after mount: ', this.boxes, this.loop)
-    this.loop = horizontalLoop(this.boxes, {
-        paused: false,
-        repeat: -1,
-      })
   }
 }
 </script>
@@ -105,6 +78,7 @@ export default {
 <style lang="sass" scoped>
 .skills
   margin-top: 7%
+  padding: 0 40px 20px 40px
   position: relative
   height: calc( 100vh - 380px )
 h1
@@ -115,55 +89,8 @@ h1
   -webkit-text-fill-color: transparent
   font-size: 75px
   line-height: 100px
-.wrapper
-  height: 120px 
-  width: 120%
-  margin-left: -30px
-  background: none
-  position: absolute
-  display: flex
-  align-items: center
-  overflow: hidden
 
-.wrapper2
-  height: 120px 
-  width: 120%
-  border: 1PX SOLID RED
-  margin-left: -30px
-  background: none
-  bottom: 0px
-  position: absolute
-  display: flex
-  align-items: center
-  overflow: hidden
-.box, .box_lower
-  display: flex
-  align-items: center
-  justify-content: center
-  height: 100%
-  width: 12%
-  margin: 0
-  padding: 0
-  position: relative
-  flex-shrink: 0
-  color: black
-  font-size: 21px
-  cursor: pointer
-  margin: 0 15px
-  & > img
-
-.img-box, .img-box-lo
-  border: 1px solid #201E1E
-  position: relative
-  border-radius: 5px
-  height: 100px
-  width: 100px
-  display: flex
-  align-items: center
-  justify-content: center
-  background-color: rgba(25, 24, 24, 0.3)
-  & > img
-    position: absolute
-    transform: scale(1)
-    opacity: 0.9
+.lower
+  margin-top: 18%
+  margin-left: -8.7%
 </style>
