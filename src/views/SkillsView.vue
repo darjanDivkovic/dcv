@@ -1,7 +1,6 @@
 <template>
   <div class="skills">
     <h1>Web developer with</br>plethora of Tech Skills</h1>
-    
     <div class="wrapper">
     <div class="box">
       <div class="img-box">
@@ -53,7 +52,7 @@
       <img src="@/assets/skills/psql.svg" alt="">
       </div>
     </div>
-  </div>
+    </div>
   </div>
 </template>
 
@@ -78,6 +77,7 @@ export default {
       const loop = horizontalLoop(boxes, {
         paused: false,
         repeat: -1,
+        reversed: true,
       })
       this.loop = loop
     },
@@ -105,30 +105,42 @@ export default {
 <style lang="sass" scoped>
 .skills
   margin-top: 7%
-
+  position: relative
+  height: calc( 100vh - 380px )
 h1
   text-align: left
   width: 70%
   background: -webkit-linear-gradient(30deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.4) 100%)
   -webkit-background-clip: text
   -webkit-text-fill-color: transparent
-  font-size: 35px
-  line-height: 45px
+  font-size: 75px
+  line-height: 100px
 .wrapper
-  height: 60px 
+  height: 120px 
   width: 120%
   margin-left: -30px
   background: none
-  position: relative
+  position: absolute
   display: flex
   align-items: center
   overflow: hidden
 
-.box 
+.wrapper2
+  height: 120px 
+  width: 120%
+  border: 1PX SOLID RED
+  margin-left: -30px
+  background: none
+  bottom: 0px
+  position: absolute
+  display: flex
+  align-items: center
+  overflow: hidden
+.box, .box_lower
   display: flex
   align-items: center
   justify-content: center
-  height: 80%
+  height: 100%
   width: 12%
   margin: 0
   padding: 0
@@ -140,18 +152,18 @@ h1
   margin: 0 15px
   & > img
 
-.img-box
+.img-box, .img-box-lo
   border: 1px solid #201E1E
   position: relative
   border-radius: 5px
-  height: 45px
-  width: 45px
+  height: 100px
+  width: 100px
   display: flex
   align-items: center
   justify-content: center
   background-color: rgba(25, 24, 24, 0.3)
   & > img
     position: absolute
-    transform: scale(0.5)
+    transform: scale(1)
     opacity: 0.9
 </style>

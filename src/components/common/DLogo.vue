@@ -80,29 +80,32 @@ export default {
 <style lang="sass" scoped>
 #logo
   display: flex
-  margin-left: -10px
   flex-direction: row
   justify-content: center
   align-items: center
   width: max-content
-  height: 40px
+  margin-left: -15px
+  height: 60px
   & > div
     font-family: 'secondary'
     margin-left: 3px
     line-height: 0.8
     & > p
       margin: 0
-      font-size: 12px
+      font-size: 24px
       font-weight: 300
       letter-spacing: 2px
+      margin-bottom: 8px
       color: #e4e6eb
       font-family: primary
 .position
   color: rgba(108,100,100, 0.3)
-  font-size: 9px
+  font-size: 18px
 
 #container
-  width: 37px
-  min-height: 37px
+  width: 60px
+  margin-left: -15px
+  min-height: 60px
+  margin-right: 5px
   background: none
 </style>

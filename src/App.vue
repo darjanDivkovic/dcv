@@ -207,19 +207,19 @@ export default {
 
   
 #header-section
-  padding: 15px 30px 0 30px
+  padding: 20px 40px 0 40px
   display: flex
   justify-content: space-between
   align-items: center
 #body-section
   flex-grow: 1
-  height: calc(100% - 140px)
+  height: calc(100% - 185px)
   padding: 20px 30px 0 30px
   overflow: hidden
 #footer-section
   position: relative
   display: flex
-  padding: 20px 0 30px 30px
+  padding: 20px 40px 30px 40px
   flex-direction: row
   align-items: center
 
@@ -236,11 +236,11 @@ export default {
   background: rgba(0,0,0,0)
   &.linkedin
     background-color: rgba(0,0,0,0)
-    height: 15px 
+    height: 30px 
 
   &.github
-    height: 15px 
-    margin-left: 10px
+    height: 30px 
+    margin-left: 15px
     background-position: center
     background-size: contain
     background-color: rgba(0,0,0,0)
@@ -255,17 +255,17 @@ export default {
 .router-link
   all: unset
   transition: all 0.3s
-  padding: 0 15px
+  padding: 0 20px
   color: rgba(108,100,100, 0.3)
   width: max-content
   font-weight: 500
   text-transform: uppercase
-  font-size: 10px
+  font-size: 16px
   cursor: pointer
   transform: scale(1)
   text-align: center
   &.active
-    transform: scale(1.3)
+    transform: scale(1.3)    
     color: rgba(228, 230, 235, 1)
 
 @media (max-width: 965px)

@@ -13,20 +13,19 @@ export default {
 
 <style lang="sass" scoped>
 #d-button
-    font-size: 10px
+    font-size: 18px
     font-family: primary
     font-weight: 300
     display: flex
     align-items: center 
     line-height: 0
-    height: 25px
     color: #fff
-    padding: 0px 12px
+    padding: 12px 15px
     background: none
     border: 1px solid rgba(86, 81, 81, 0.1)
     border-radius: 5px
     cursor: pointer
 .d-button-img
-    height: 12px
+    height: 18px
     margin-left: 5px
 </style>

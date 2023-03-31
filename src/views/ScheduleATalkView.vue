@@ -42,12 +42,12 @@ export default {
     background: -webkit-linear-gradient(30deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.4) 100%)
     -webkit-background-clip: text
     -webkit-text-fill-color: transparent
-    font-size: 35px
-    line-height: 45px
+    font-size: 75px
+    line-height: 100px
   & > p
     text-align: center
-    font-size: 10px
-    line-height: 15px
+    font-size: 20px
+    line-height: 30px
     color: rgba(255, 255, 255, 0.3)
     & > .purple-span
       color: #6639ED
