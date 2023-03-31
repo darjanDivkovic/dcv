@@ -77,10 +77,10 @@ export default {
 
 <style lang="sass" scoped>
 .skills
-  margin-top: 7%
+  margin-top: 110px
   padding: 0 40px 20px 40px
   position: relative
-  height: calc( 100vh - 380px )
+  height: calc( 100vh - 340px )
 h1
   text-align: left
   width: 70%
@@ -91,6 +91,6 @@ h1
   line-height: 100px
 
 .lower
-  margin-top: 18%
+  margin-top: 220px
   margin-left: -8.7%
 </style>
