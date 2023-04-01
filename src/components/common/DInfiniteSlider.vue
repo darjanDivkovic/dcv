@@ -73,18 +73,7 @@ export default {
   align-items: center
   overflow: hidden
 
-.wrapper2
-  height: 120px 
-  width: 120%
-  border: 1PX SOLID RED
-  margin-left: -30px
-  background: none
-  bottom: 0px
-  position: absolute
-  display: flex
-  align-items: center
-  overflow: hidden
-.box, .box_lower
+.box
   display: flex
   align-items: center
   justify-content: center
@@ -100,7 +89,7 @@ export default {
   margin: 0 15px
   & > img
 
-.img-box, .img-box-lo
+.img-box
   border: 1px solid #201E1E
   position: relative
   border-radius: 5px
@@ -113,5 +102,5 @@ export default {
   & > img
     position: absolute
     transform: scale(1)
-    opacity: 0.9
+    opacity: 0.8
 </style>

@@ -1,13 +1,15 @@
 <template>
     <div id="d-background">
         <div id="circle-container">
-            <div id="circle"></div>
+            <div id="circle">
+            </div>
         </div>
     </div>
 </template>
 
 <script>
 import { gsap } from 'gsap'
+import DLogo from '@/components/common/DLogo.vue';
 
 const PURPLE_GRADIENT = 'hsla(255, 55%, 18%, 0.5)';
 const BLUE_GRADIENT = 'hsla(227, 78%, 18%, 0.5)';
@@ -19,6 +21,9 @@ const GREEN_GRADIENT = 'hsla(171, 40%, 18%, 0.5)';
 export default {
     name: 'DBackground',
     props: ['position'],
+    components: {
+        DLogo
+    },
     data() {
         return {
             xPosition: 0,

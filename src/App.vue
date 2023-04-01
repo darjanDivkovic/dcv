@@ -1,32 +1,29 @@
 <template>
   <div id="app">
-    <DBackground :position="page_position"/>
+    <DBackground :position="page_position" />
     <div id="sections-container">
-        <div id="header-section">
-          <DLogo :color="currentLogoColor"/>
-          <DButton text="Hire Me"/>
+      <div id="header-section">
+        <DLogo :color="currentLogoColor" />
+        <DButton text="Hire Me" />
+      </div>
+
+      <div id="body-section">
+        <router-view />
+      </div>
+
+      <div id="footer-section">
+        <!-- ICONS GITHUB LINKED IN -->
+        <div>
+          <img src="@/assets/small_links/linked_in_link.png" alt="" class="link linkedin" @click="goToLinkedIn">
+          <img src="@/assets/small_links/github_link.png" alt="" class="link github" @click="goToGitHub">
         </div>
-    
-        <div id="body-section">
-          <router-view/>
-        </div>
-        
-        <div id="footer-section">
-          <!-- ICONS GITHUB LINKED IN -->
-          <div>
-            <img src="@/assets/small_links/linked_in_link.png" alt="" class="link linkedin" @click="goToLinkedIn">
-            <img src="@/assets/small_links/github_link.png" alt="" class="link github" @click="goToGitHub">
-          </div>
-          <!-- PAGES NAVBAR -->
-          <nav id="navbar">
-            <router-link v-for="(page, index) in PAGES"
-                     :key="page"
-                     :to=createLink(page)
-                     class="router-link"
-                     :class="{'active': isActive(PAGE_NAMES[index])}"
-                     @click.native.prevent="handlePageClick(page)">{{ PAGE_NAMES[index] }}</router-link>
-          </nav>
-        </div>      
+        <!-- PAGES NAVBAR -->
+        <nav id="navbar">
+          <router-link v-for="(page, index) in PAGES" :key="page" :to=createLink(page) class="router-link"
+            :class="{ 'active': isActive(PAGE_NAMES[index]) }" @click.native.prevent="handlePageClick(page)">{{
+              PAGE_NAMES[index] }}</router-link>
+        </nav>
+      </div>
     </div>
   </div>
 </template>
@@ -38,16 +35,16 @@ import DButton from './components/common/DButton.vue';
 
 const PAGES = ['', 'skills', 'experience', 'recommendations', 'schedule_a_talk'];
 const PAGE_NAMES = ['home', 'skills', 'experience', 'recommendations', 'schedule a talk']
-const COLORS = [ 
+const COLORS = [
   {
     name: 'home',
     hex: '#301E67',
-    decimal: 3153511
+    decimal: 6699501
   },
   {
     name: 'skills',
     hex: '#0E236F',
-    decimal: 926575
+    decimal: 1786316
   },
   {
     name: 'experience',
@@ -65,7 +62,7 @@ const COLORS = [
     decimal: 58560
   },
 ]
-const PAUSE_TIME_MILIS = 1000;
+const PAUSE_TIME_MILIS = 2000;
 
 export default {
   data() {
@@ -83,7 +80,7 @@ export default {
     DLogo,
     DBackground,
     DButton,
-  }, 
+  },
   computed: {
     currentLogoColor() {
       return COLORS.find(color => color.name === this.$route.name).decimal
@@ -103,11 +100,11 @@ export default {
     goToLinkedIn() {
       const URL = 'https://www.linkedin.com/in/darjan-divkovi%C4%87-171386163/'
       window.open(URL, '_blank')
-    },  
+    },
     goToGitHub() {
       const URL = 'https://github.com/darjanDivkovic'
       window.open(URL, '_blank')
-    },  
+    },
     isActive(route) {
       return this.$route.name === route
     },
@@ -117,31 +114,31 @@ export default {
     handlePageClick(page) {
       this.page_position = PAGES.indexOf(page)
     },
-  // HANDLE SCROLL UP AND DOWN
-  // ************************
+    // HANDLE SCROLL UP AND DOWN
+    // ************************
 
     handleWheel(event) {
-      if(!this.pause) {
+      if (!this.pause) {
         if (event.deltaY < 0) {
-        // SCROLLING UP
-        this.handleScrollUp();
+          // SCROLLING UP
+          this.handleScrollUp();
         } else if (event.deltaY > 0) {
-        // SCROLLING DOWN
-        this.handleScrollDown();
+          // SCROLLING DOWN
+          this.handleScrollDown();
         }
       }
     },
     handleScrollUp() {
-      if(this.page_position - 1 < 0) {
+      if (this.page_position - 1 < 0) {
         this.page_position = PAGES.length - 1
-      } else this.page_position = this.page_position -1
+      } else this.page_position = this.page_position - 1
       this.$router.push({ path: `/${PAGES[this.page_position]}` })
       this.pause = true
       this.unpause();
     },
     handleScrollDown() {
-      
-      if(this.page_position + 1 === PAGES.length) {
+
+      if (this.page_position + 1 === PAGES.length) {
         this.page_position = 0
       } else this.page_position = this.page_position + 1
       this.$router.push({ path: `/${PAGES[this.page_position]}` })
@@ -150,24 +147,24 @@ export default {
     },
     unpause() {
       setTimeout(() => {
-          this.pause = false
+        this.pause = false
       }, PAUSE_TIME_MILIS);
-    },  
+    },
     // ************************
     // HANDLE SWIPE UP AND DOWN
-    
+
     checkDirection() {
-    if (this.touchEndY < this.touchStartY) {
-      this.handleScrollDown();
-    }
-    if (this.touchEndY > this.touchStartY) {
-      this.handleScrollUp();
-    }
+      if (this.touchEndY < this.touchStartY) {
+        this.handleScrollDown();
+      }
+      if (this.touchEndY > this.touchStartY) {
+        this.handleScrollUp();
+      }
     },
   },
   mounted() {
     const index = COLORS.findIndex(page => page.name === this.$route.name)
-    this.page_position =  index >= 0 ? index : 0
+    this.page_position = index >= 0 ? index : 0
     window.addEventListener('wheel', this.handleWheel)
     window.addEventListener('touchstart', e => {
       this.touchStartY = e.changedTouches[0].screenY
@@ -207,13 +204,13 @@ export default {
 
   
 #header-section
-  padding: 20px 40px 0 40px
+  padding: 30px 40px 0 20px
   display: flex
   justify-content: space-between
   align-items: center
 #body-section
   flex-grow: 1
-  height: calc(100% - 185px)
+  height: calc(100% - 200px)
   padding: 20px 30px 0 30px
   overflow: hidden
 #footer-section

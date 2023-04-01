@@ -1,14 +1,14 @@
 <template>
   <div class="skills">
-    <h1>Web developer with</br>plethora of Tech Skills</h1>
-      <DInfiniteSlider :skills="SKILLS[0]"></DInfiniteSlider>
-      <DInfiniteSlider :skills="SKILLS[1]" class="lower"></DInfiniteSlider>
+    <h1>Web developer with a plethora of Tech Skills</h1>
+    <DInfiniteSlider :skills="SKILLS[0]"></DInfiniteSlider>
+    <DInfiniteSlider :skills="SKILLS[1]" class="lower"></DInfiniteSlider>
     </div>
-  </div>
 </template>
 
 <script>
 import DInfiniteSlider from '@/components/common/DInfiniteSlider.vue'
+import { gsap } from 'gsap';
 
 import CucumberIcon from '@/assets/skills/cucumber.svg'
 import TailwindIcon from '@/assets/skills/tailwind.svg'
@@ -71,6 +71,9 @@ export default {
         SKILLS_LOWER
       ]
     }
+  },
+  mounted() {
+    gsap.fromTo('.skills', {opacity: 0}, {opacity: 1, duration: 1, delay: 1})
   }
 }
 </script>
@@ -83,7 +86,9 @@ export default {
   height: calc( 100vh - 340px )
 h1
   text-align: left
-  width: 70%
+  margin-bottom: 21px
+  padding-bottom: 60px
+  width: 75%
   background: -webkit-linear-gradient(30deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.4) 100%)
   -webkit-background-clip: text
   -webkit-text-fill-color: transparent

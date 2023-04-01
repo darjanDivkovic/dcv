@@ -5,6 +5,7 @@
         <p>DARJAN</p>
         <span class="position">Web Developer / UI | UX</span>
     </div>
+
 </div>
 </template>
 
@@ -84,7 +85,6 @@ export default {
   justify-content: center
   align-items: center
   width: max-content
-  margin-left: -15px
   height: 60px
   & > div
     font-family: 'secondary'

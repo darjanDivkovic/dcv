@@ -51,10 +51,10 @@ import { gsap } from 'gsap';
 export default {
   name: 'ExperienceView',  
   mounted() {
-    gsap.fromTo('.experience', {opacity: 0}, {opacity: 1, duration: 1, delay: 1})
+    gsap.fromTo('.experience', {opacity: 0}, {opacity: 1, duration: 0.7, delay: 1})
     gsap.from('.animated', {
       textContent: 0,
-      duration: 4,
+      duration: 2,
       delay: 1,
       ease: "power1.in",
       snap: { textContent: 1 },

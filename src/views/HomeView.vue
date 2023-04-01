@@ -20,6 +20,9 @@ export default {
   name: 'HomeView',  
   components: {
     DButton,
+  },
+  mounted() {
+    gsap.fromTo('.home', {opacity: 0}, {opacity: 1, duration: 0.7, delay: 1})
   }
 }
 </script>

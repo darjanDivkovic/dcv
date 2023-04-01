@@ -21,6 +21,9 @@ export default {
   name: 'ScheduleATalkView',  
   components: {
     DButton,
+  },
+  mounted() {
+    gsap.fromTo('.schedule-a-talk', {opacity: 0}, {opacity: 1, duration: 0.7, delay: 1})
   }
 }
 </script>
