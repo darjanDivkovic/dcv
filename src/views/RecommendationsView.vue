@@ -29,6 +29,8 @@
   import PetarIcon from '@/assets/recoms/petar.svg'
   import WarrenIcon from '@/assets/recoms/warren.svg'
 
+  import { gsap } from 'gsap'
+
   const PEOPLE = [
   { 
     name: 'Giannis Koutsaftakis',
@@ -104,6 +106,7 @@
       const slider = document.getElementById('cards')
       this.slider = slider
       this.slider.addEventListener('mousedown', (e) => {
+        console.log('e', e.target)
         this.isDown = true;
         this.slider.classList.add('active');
         this.startX = e.pageX - this.slider.offsetLeft;
@@ -123,7 +126,7 @@
         const x = e.pageX - this.slider.offsetLeft;
         const walk = (x - this.startX) * 1.2; //scroll-fast
         this.slider.scrollLeft = this.scrollLeft - walk;
-        console.log(walk);
+        //console.log(walk);
       });
     },
   }
@@ -164,13 +167,15 @@
     border-radius: 25px
     padding: 20px 30px 30px 30px
   .card-upper
+    pointer-events: none
     display: flex
     line-height: 0px
     & > div
-      margin-left: 10px
+      margin-left: 20px
 
   .card-lower
     margin-top: 20px
+    pointer-events: none
     font-size: 100%
     color:  rgba(255, 255, 255, 0.3)
     line-height: 20px
