@@ -2,8 +2,7 @@
 <div id="logo">
     <div id="container"></div>
     <div>
-        <p>DARJAN</p>
-        <span class="position">Web Developer / UI | UX</span>
+        <p>DARJAN<span class="small">.dev</span></p>
     </div>
 
 </div>
@@ -93,9 +92,8 @@ export default {
     & > p
       margin: 0
       font-size: 24px
-      font-weight: 300
-      letter-spacing: 2px
-      margin-bottom: 8px
+      font-weight: 400
+      letter-spacing: 3px
       color: #e4e6eb
       font-family: primary
 .position
@@ -108,4 +106,10 @@ export default {
   min-height: 60px
   margin-right: 5px
   background: none
+
+.small
+  font-size: 13px
+  font-weight: 300
+  letter-spacing: 1px
+  opacity: 0.5
 </style>
