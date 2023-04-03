@@ -38,9 +38,9 @@
       </div>
       
       <div class="company-container">
-        <img src="@/assets/company_icons/bild.svg" alt="">
+        <img class="bild" src="@/assets/company_icons/bild.svg" alt="">
         <img src="@/assets/company_icons/pequity.svg" alt="">
-        <img src="@/assets/company_icons/innoscripta.svg" alt="">
+        <img class="inos" src="@/assets/company_icons/innoscripta.svg" alt="">
 
       </div>
     </div>
@@ -97,7 +97,7 @@ h1
   flex-direction: column
   color: rgba(254, 254, 254, 0.4)
   position: relative
-  min-width: 15%
+  min-width: 17%
   font-weight: 100
   align-items: center
 .count-box-top
@@ -105,6 +105,7 @@ h1
   flex-direction: row
 .count
   font-size: 80px
+  font-weight: 300
   line-height: 0px
 .plus
   padding-top: 15px
@@ -114,6 +115,7 @@ h1
   font-size: 16px
   min-height: max-content
   height: 23px
+  font-weight: 200
   position: absolute
   bottom: 8px
   width: max-content
@@ -135,8 +137,13 @@ h1
   border-bottom: 1px solid rgba(32, 30, 30, 0.6)
   & > img
     opacity: 0.4
-    height: 65px
+    height: 60px
     padding: 0
     margin: 0 35px
     
+.inos
+  opacity: 0.7 !important
+
+.bild
+  opacity: 0.5 !important
 </style>

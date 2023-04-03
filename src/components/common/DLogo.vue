@@ -54,11 +54,10 @@ export default {
 
     },
     createMesh(color) {
-        let geometry = new Three.DodecahedronGeometry(0.2, 0);
+        let geometry = new Three.SphereGeometry( 0.2, 7, 2 );
         let material = new Three.MeshBasicMaterial({
             wireframe: true,
             color,
-            wireframeLinewidth: 0
         });
 
         this.mesh = new Three.Mesh(geometry, material);
@@ -67,7 +66,7 @@ export default {
     },
     animate: function() {
         requestAnimationFrame(this.animate);
-        this.mesh.rotation.y += 0.005;
+        this.mesh.rotation.y += 0.002;
         this.renderer.render(this.scene, this.camera);
     }
   },

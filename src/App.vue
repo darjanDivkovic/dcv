@@ -4,7 +4,17 @@
     <div id="sections-container">
       <div id="header-section">
         <DLogo :color="currentLogoColor" />
-        <DButton text="Hire Me" />
+        <div class="header-right">
+          <div class="dropdown">
+            <h1>Portfolio<span>⮟</span></h1>
+            <div class="button-container">
+              <button>[PDF, OCR] Download CV</button>
+              <button>[Figma] Download CV</button>
+            </div>
+          </div>
+          
+          <DButton text="Hire Me" />
+        </div>
       </div>
 
       <div id="body-section">
@@ -32,6 +42,8 @@
 import DLogo from '@/components/common/DLogo.vue';
 import DBackground from './components/common/DBackground.vue';
 import DButton from './components/common/DButton.vue';
+
+import { gsap } from 'gsap'
 
 const PAGES = ['', 'skills', 'experience', 'recommendations', 'schedule_a_talk'];
 const PAGE_NAMES = ['home', 'skills', 'experience', 'recommendations', 'schedule a talk']
@@ -74,6 +86,8 @@ export default {
       touchEndY: null,
       PAGES,
       PAGE_NAMES,
+      dropdownAnim: null,
+      dropdownElem: null,
     }
   },
   components: {
@@ -174,6 +188,22 @@ export default {
       this.touchEndY = e.changedTouches[0].screenY
       this.checkDirection()
     })
+
+    const dropdownElem = document.querySelector('.dropdown')
+    this.dropdownElem = dropdownElem
+
+    const dropdownAnim = gsap.to(".button-container", {
+        paused: true,
+        height: '70px',
+        border: '1px solid #565151'
+    });
+
+    this.dropdownAnim = dropdownAnim
+
+    this.dropdownElem.addEventListener('mouseenter', () => dropdownAnim.play())
+    this.dropdownElem.addEventListener('mouseleave', () => dropdownAnim.reverse())
+
+
   },
   destroyed() {
     window.removeEventListener('wheel', this.handleWheel)
@@ -264,6 +294,42 @@ export default {
   &.active
     transform: scale(1.3)    
     color: rgba(228, 230, 235, 1)
+
+.header-right
+  display: flex
+  & > div
+    display: flex
+    position: relative
+    & > h1 
+      margin-right: 20px
+      color: rgba(254, 254, 254, 0.5)
+      font-size: 16px
+      font-weight: 200
+      display: flex
+      flex-direction: row
+      align-items: center
+      & > span
+        margin-left: 10px
+        font-size: 12px
+        
+.button-container
+  bottom: 0
+  transform: translateY(100%)
+  overflow: hidden
+  height: 0px
+  right: 20px
+  border: none
+  border-top-left-radius: 5px
+  border-bottom-left-radius: 5px
+  position: absolute
+  & > button
+    all: unset
+    color: #fff
+    font-size: 12px
+    width: max-content
+    padding: 10px 15px
+    &:hover
+      cursor: pointer
 
 @media (max-width: 965px)
   #navbar

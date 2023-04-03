@@ -13,7 +13,7 @@ export default {
 
 <style lang="sass" scoped>
 #d-button
-    font-size: 18px
+    font-size: 16px
     font-family: primary
     font-weight: 300
     display: flex
