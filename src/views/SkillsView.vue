@@ -77,9 +77,9 @@ export default {
   mounted() {
     //gsap.fromTo('.skills', {opacity: 0}, {opacity: 1, duration: 1, delay: 1})
     const myText = new SplitType('.header')
-    gsap.fromTo('.char',{filter: 'blur(6px)', opacity: 0}, { filter: 'blur(0px)', opacity: 1, delay: 1, duration: 0.3})
-    gsap.fromTo('.upper', {filter: 'blur(6px)', opacity: 0}, { filter: 'blur(0px)', opacity: 1, delay: 1.5, duration: 0.3})
-    gsap.fromTo('.lower', {filter: 'blur(6px)', opacity: 0}, { filter: 'blur(0px)', opacity: 1, delay: 1.8, duration: 0.3})
+    gsap.fromTo('.char',{filter: 'blur(6px)', opacity: 0}, { filter: 'blur(0px)', opacity: 1, delay: 1, duration: 0.3, stagger: 0.05})
+    gsap.fromTo('.upper', {filter: 'blur(6px)', opacity: 0}, { filter: 'blur(0px)', opacity: 1, delay: 3.1, duration: 0.3})
+    gsap.fromTo('.lower', {filter: 'blur(6px)', opacity: 0}, { filter: 'blur(0px)', opacity: 1, delay: 3.6, duration: 0.3})
   }
 }
 </script>
@@ -100,5 +100,5 @@ h1
 
 .lower
   margin-top: 220px
-  margin-left: -8.7%
+  margin-left: -5%
 </style>

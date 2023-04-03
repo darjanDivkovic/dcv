@@ -1,8 +1,11 @@
 <template>
     <div id="d-background">
-        <div id="circle-container">
+        <div class="d-background-inner">
+            <div id="circle-container">
             <div id="circle">
             </div>
+            <DThreeObject :color="color" :top="47" :left="50"/>    
+        </div>
         </div>
     </div>
 </template>
@@ -10,6 +13,7 @@
 <script>
 import { gsap } from 'gsap'
 import DLogo from '@/components/common/DLogo.vue';
+import DThreeObject from '@/components/common/DThreeObject'
 
 const PURPLE_GRADIENT = 'hsla(255, 55%, 18%, 0.5)';
 const BLUE_GRADIENT = 'hsla(227, 78%, 18%, 0.5)';
@@ -20,9 +24,10 @@ const GREEN_GRADIENT = 'hsla(171, 40%, 18%, 0.5)';
 
 export default {
     name: 'DBackground',
-    props: ['position'],
+    props: ['position', 'color'],
     components: {
-        DLogo
+        DLogo,
+        DThreeObject
     },
     data() {
         return {
@@ -103,7 +108,7 @@ export default {
     z-index: -1
     top: 0
     left: 0
-    width: 100%
+    width: 100vw
     height: 100vh
     overflow: hidden
 #circle-container
@@ -118,6 +123,9 @@ export default {
     left: calc(50% - 60vh)
     background: radial-gradient(circle, hsla(255, 55%, 26%, 0.5) 0%, hsla(0, 0%, 7%, 0.5) 70%)
     border-radius: 50%
+
+.d-background-inner
+   height: 100%
 </style>
 
 PURPLE

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <DBackground :position="page_position" />
+    <DBackground :position="page_position" :color="currentLogoColor"/>
     <div id="sections-container">
       <div id="header-section">
         <DLogo :color="currentLogoColor" />
