@@ -17,3 +17,8 @@ body {
     overflow-x: none;
     background-color: #121212;
 }
+
+.char {
+    transform: translateY(0%);
+    color: #fff;
+}

@@ -2,19 +2,18 @@
   <div class="home">
     <div class="content">
       <div class="header-container">
-        <h1 class="header">Ready to collaborate & upgrade<br/> your solution?</h1>
+        <h1 class="header">Ready to collaborate on existing or</br>build a new solution?</h1>
       </div>
       <div class="text-container">
-        <p class="text"><span class="grey-span">Nothing to it but to do it!</span><br/>
+        <p class="text">
+          <p class="text"><span class="grey-span">Nothing to it but to do it!</span><br/>
         Schedule a 1:1 <span class="green-span">Google Meet w @Darjan</span><br/>
         and discuss your project's needs...</p>
+        </p>
       </div>
       
       <div id="explore-btn">
-        <DButton class="d-btn" text="Meet Me"/>
-      </div>
-      <div class="calendly-container">
-        <p class="calendly">Powered by <span class="grey-span">Calendly</span></p>
+        <DButton class="d-btn" text="Let's Talk !"/>
       </div>
     </div>
   </div>
@@ -23,6 +22,7 @@
 <script>
 import { gsap } from 'gsap'
 import DButton from '@/components/common/DButton.vue';
+import SplitType from 'split-type'
 
 export default {
   name: 'ScheduleATalkView',  
@@ -30,10 +30,14 @@ export default {
     DButton,
   },
   mounted() {
-    gsap.to('.header', {opacity: 1, delay: 1, duration: 0.7, y: 0})
-    gsap.to('.text', {opacity: 1, delay: 1.6, duration: 0.5, y: 0})
-    gsap.to('.d-btn', {opacity: 1, delay: 2, duration: 0.3, y: 0})
-    gsap.to('.calendly', {opacity: 0.5533, delay: 2.5, duration: 0.2, y: 0})
+    //gsap.fromTo('.header',{filter: } {opacity: 1, delay: 1, duration: 0.7, y: 0})
+    gsap.to('.text', {opacity: 1, delay: 3.2, duration: 0.5, y: 0})
+    gsap.to('.d-btn', {opacity: 1, delay: 3.7, duration: 0.6, y: 0})
+
+    const myText = new SplitType('.header')
+    gsap.fromTo('.char',{filter: 'blur(6px)', opacity: 0}, { filter: 'blur(0px)', opacity: 1, delay: 0.5, duration: 0.3, stagger: 0.05})
+    //gsap.to('.word', {y: '-5%', stagger: 0.1, duration: 0.4, delay: 2.3, repeat: -1,ease: 'none', yoyo: true})
+    //gsap.to('.word', {y: '5%', stagger: 0.1, duration: 0.4, delay: 4.2, repeat: -1,ease: 'none', yoyo: true})
   }
 }
 </script>
@@ -61,6 +65,17 @@ export default {
     transform: translateY(120%)
     line-height: 30px
     color: rgba(255, 255, 255, 0.3)
+    & > .purple-span
+      color: #6639ED
+      font-weight: 600
+    & > .grey-span
+      font-weight: 600
+
+.header
+  text-align: center
+  & > div
+    border: 1px solid red
+
 .green-span
   color: rgba(0, 228, 192, 0.6)
   font-weight: 600
@@ -70,24 +85,13 @@ export default {
 .header-container
   overflow: hidden
 .header
-  text-align: center
-  opacity: 0
-  background: -webkit-linear-gradient(30deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.4) 100%)
   -webkit-background-clip: text
-  -webkit-text-fill-color: transparent
   font-size: 75px
-  transform: translateY(-120%)
-  line-height: 100px
-  
+  & > .char
 #explore-btn
   margin-top: 20px
   overflow: hidden
   & > button
     opacity: 0
     transform: translateY(100%)
-
-.calendly
-  opacity: 0
-  font-size: 10px
-  color: #6C6464
 </style>

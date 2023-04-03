@@ -54,7 +54,7 @@ export default {
 
     },
     createMesh(color) {
-        let geometry = new Three.SphereGeometry( 0.2, 7, 2 );
+        let geometry = new Three.SphereGeometry( 0.2, 6, 4 );
         let material = new Three.MeshBasicMaterial({
             wireframe: true,
             color,
@@ -67,6 +67,7 @@ export default {
     animate: function() {
         requestAnimationFrame(this.animate);
         this.mesh.rotation.y += 0.002;
+        this.mesh.rotation.x -= 0.002;
         this.renderer.render(this.scene, this.camera);
     }
   },

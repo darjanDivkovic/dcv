@@ -20,6 +20,7 @@
 <script>
 import { gsap } from 'gsap'
 import DButton from '@/components/common/DButton.vue';
+import SplitType from 'split-type'
 
 export default {
   name: 'HomeView',  
@@ -27,9 +28,14 @@ export default {
     DButton,
   },
   mounted() {
-    gsap.to('.header', {opacity: 1, delay: 1, duration: 0.7, y: 0})
-    gsap.to('.text', {opacity: 1, delay: 1.6, duration: 0.5, y: 0})
-    gsap.to('.d-btn', {opacity: 1, delay: 2, duration: 0.3, y: 0})
+    //gsap.fromTo('.header',{filter: } {opacity: 1, delay: 1, duration: 0.7, y: 0})
+    gsap.to('.text', {opacity: 0.999, delay: 2.3, duration: 0.5, y: 0})
+    gsap.to('.d-btn', {opacity: 0.999, delay: 2.8, duration: 0.6, y: 0})
+
+    const myText = new SplitType('.header')
+    gsap.fromTo('.char',{filter: 'blur(6px)', opacity: 0}, { filter: 'blur(0px)', opacity: 1, delay: 0.5, duration: 0.3, stagger: 0.05})
+    //gsap.to('.word', {y: '-5%', stagger: 0.1, duration: 0.4, delay: 2.3, repeat: -1,ease: 'none', yoyo: true})
+    //gsap.to('.word', {y: '5%', stagger: 0.1, duration: 0.4, delay: 4.2, repeat: -1,ease: 'none', yoyo: true})
   }
 }
 </script>
@@ -63,18 +69,17 @@ export default {
     & > .grey-span
       font-weight: 600
 
+.header
+  text-align: center
+  & > div
+    border: 1px solid red
+
 .header-container
   overflow: hidden
 .header
-  text-align: center
-  opacity: 0
-  background: -webkit-linear-gradient(30deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.4) 100%)
   -webkit-background-clip: text
-  -webkit-text-fill-color: transparent
   font-size: 75px
-  transform: translateY(-120%)
-  line-height: 100px
-  
+  & > .char
 #explore-btn
   margin-top: 20px
   overflow: hidden

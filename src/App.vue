@@ -263,10 +263,10 @@ export default {
   background: rgba(0,0,0,0)
   &.linkedin
     background-color: rgba(0,0,0,0)
-    height: 30px 
+    height: 25px 
 
   &.github
-    height: 30px 
+    height: 25px 
     margin-left: 15px
     background-position: center
     background-size: contain
@@ -277,7 +277,7 @@ export default {
     box-shadow: 0px 0px 9px rgba(255, 255, 255, 0.5)
     
     cursor: pointer
-    filter: brightness(300%) 
+    filter: brightness(600%) 
 
 .router-link
   all: unset
