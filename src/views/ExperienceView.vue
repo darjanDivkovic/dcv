@@ -1,6 +1,6 @@
 <template>
     <div class="experience">
-      <h1>Darjan’s Career Highlights <br/>& Work History</h1>
+      <h1 class="header">Darjan’s Career Highlights <br/>& Work History</h1>
       <div class="count-container">
         <div class="count-box">
           <div class="count-box-top">
@@ -47,15 +47,18 @@
 </template>
 <script>
 import { gsap } from 'gsap';
+import SplitType from 'split-type'
 
 export default {
   name: 'ExperienceView',  
   mounted() {
-    gsap.fromTo('.experience', {opacity: 0}, {opacity: 1, duration: 0.7, delay: 1})
+    const myText = new SplitType('.header')
+    gsap.fromTo('.char',{filter: 'blur(6px)', opacity: 0}, { filter: 'blur(0px)', opacity: 1, delay: 0.5, duration: 0.3, stagger: 0.05})
+    gsap.fromTo('.count-container', {filter: 'blur(6px)', opacity: 0}, { filter: 'blur(0px)', opacity: 1, delay: 2.4, duration: 0.3})
     gsap.from('.animated', {
       textContent: 0,
       duration: 2,
-      delay: 1,
+      delay: 2.8,
       ease: "power1.in",
       snap: { textContent: 1 },
       stagger: {
@@ -65,9 +68,12 @@ export default {
         },  
       }
     });
+    gsap.fromTo('.company-container', {filter: 'blur(6px)', opacity: 0}, { filter: 'blur(0px)', opacity: 1, delay: 3.3, duration: 0.3})
+
   },
   beforeDestroy() {
-    gsap.fromTo('.experience', {opacity: 1}, {opacity: 0, duration: 0.3})
+    //gsap.fromTo('.experience', {opacity: 1}, {opacity: 0, duration: 0.3})
+    
   }
 }
 </script>
@@ -75,13 +81,10 @@ export default {
 <style lang="sass" scoped>
 .experience
   margin-top: 5%
-h1
+.header
   text-align: left
   width: 100%
   padding: 0 33px
-  background: -webkit-linear-gradient(30deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.2) 100%)
-  -webkit-background-clip: text
-  -webkit-text-fill-color: transparent
   font-size: 75px
   line-height: 100px
 

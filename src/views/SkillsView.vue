@@ -1,7 +1,7 @@
 <template>
   <div class="skills">
-    <h1>Web developer with a plethora of Tech Skills</h1>
-    <DInfiniteSlider :skills="SKILLS[0]"></DInfiniteSlider>
+    <h1 class="header">Web developer with a plethora of Tech Skills</h1>
+    <DInfiniteSlider :skills="SKILLS[0]" class="upper"></DInfiniteSlider>
     <DInfiniteSlider :skills="SKILLS[1]" class="lower"></DInfiniteSlider>
     </div>
 </template>
@@ -9,6 +9,8 @@
 <script>
 import DInfiniteSlider from '@/components/common/DInfiniteSlider.vue'
 import { gsap } from 'gsap';
+import SplitType from 'split-type'
+
 
 import CucumberIcon from '@/assets/skills/cucumber.svg'
 import TailwindIcon from '@/assets/skills/tailwind.svg'
@@ -73,7 +75,11 @@ export default {
     }
   },
   mounted() {
-    gsap.fromTo('.skills', {opacity: 0}, {opacity: 1, duration: 1, delay: 1})
+    //gsap.fromTo('.skills', {opacity: 0}, {opacity: 1, duration: 1, delay: 1})
+    const myText = new SplitType('.header')
+    gsap.fromTo('.char',{filter: 'blur(6px)', opacity: 0}, { filter: 'blur(0px)', opacity: 1, delay: 1, duration: 0.3})
+    gsap.fromTo('.upper', {filter: 'blur(6px)', opacity: 0}, { filter: 'blur(0px)', opacity: 1, delay: 1.5, duration: 0.3})
+    gsap.fromTo('.lower', {filter: 'blur(6px)', opacity: 0}, { filter: 'blur(0px)', opacity: 1, delay: 1.8, duration: 0.3})
   }
 }
 </script>
@@ -89,9 +95,6 @@ h1
   margin-bottom: 21px
   padding-bottom: 60px
   width: 75%
-  background: -webkit-linear-gradient(30deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.4) 100%)
-  -webkit-background-clip: text
-  -webkit-text-fill-color: transparent
   font-size: 75px
   line-height: 100px
 

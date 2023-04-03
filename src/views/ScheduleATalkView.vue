@@ -2,7 +2,7 @@
   <div class="home">
     <div class="content">
       <div class="header-container">
-        <h1 class="header">Ready to collaborate on existing or</br>build a new solution?</h1>
+        <h1 class="header">Ready to collaborate on existing<br/>or build a new solution?</h1>
       </div>
       <div class="text-container">
         <p class="text">

@@ -282,7 +282,8 @@ export default {
 .router-link
   all: unset
   transition: all 0.3s
-  padding: 0 20px
+  padding: 0 0
+  margin: 0 20px
   color: rgba(108,100,100, 0.3)
   width: max-content
   font-weight: 500
@@ -291,9 +292,21 @@ export default {
   cursor: pointer
   transform: scale(1)
   text-align: center
+  position: relative
   &.active
     transform: scale(1.3)    
     color: rgba(228, 230, 235, 1)
+    line-height: 24px
+    &:after
+      content: ''
+      position: absolute
+      bottom: 0px
+      left: 50%
+      transform: translate(-50%)
+      width: 100%
+      text-align: center
+      border-top: 1px solid #fff
+    
 
 .header-right
   display: flex

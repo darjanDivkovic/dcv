@@ -2,6 +2,22 @@
     <div class="recommendations">
       <h1>Discover why industry professionals recommend me</h1>
       <div id="cards">
+        <carousel-3d>
+          <slide v-for="(card, index) in PEOPLE" :key="card.name" :index="index" class="card">
+            <div class="card-upper">
+            <img :src="card.src" alt="" class="icon">
+            <div>
+              <p class="name">{{ card.name }}</p>
+              <p class="position">{{ card.position }}</p>
+              <p class="relation">{{ card.relation }}</p>
+            </div>
+            <div class="card-lower">
+            {{ card.comment }}
+            </div>
+          </div>
+          </slide>
+        </carousel-3d>
+        <!--
         <div v-for="card in PEOPLE" :key="card.src" class="card">
           <div class="card-upper">
             <img :src="card.src" alt="">
@@ -15,6 +31,7 @@
             {{ card.comment }}
           </div>
         </div>
+      -->
       </div>
     </div>
   </template>
@@ -30,6 +47,7 @@
   import WarrenIcon from '@/assets/recoms/warren.svg'
 
   import { gsap } from 'gsap'
+  import { Carousel3d, Slide } from 'vue-carousel-3d';
 
   const PEOPLE = [
   { 
@@ -102,6 +120,10 @@
         scrollLeft: null,
       }
     },
+    components: {
+      Carousel3d,
+      Slide,
+    },
     mounted() {
       const slider = document.getElementById('cards')
       this.slider = slider
@@ -138,7 +160,7 @@
     height: 100%
     padding-right: 30px
     & > h1
-      text-align: right
+      text-align: center
       background: -webkit-linear-gradient(30deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.4) 100%)
       -webkit-background-clip: text
       -webkit-text-fill-color: transparent
@@ -148,52 +170,73 @@
   #cards
     position: absolute
     overflow-x: scroll
-    bottom: 120px
-    margin-left: -30px
-    padding-left: 90px
+    overflow: visible
+    bottom: 80px
+    padding: 10px 0
+    margin-left: 30px
     padding-right: 0px
     width: calc(100% - 32px)
     display: flex
     flex-direction: row
     &::-webkit-scrollbar
       display: none
+
+  .carousel-3d-container
+    padding: 0 !important
+    margin: 0
+    height: 50vh !important
   .card
     border: 1px solid blue
-    min-width: 30%
-    max-height: 300px 
-    background-color: rgba(79, 77, 83, 0.1)
+    margin-top: 40px
+    min-width: 500px
+    opacity: 1 !important
+    background-color: #191818
     margin-right: 5%
-    border: 1px solid #4F4D53
-    border-radius: 25px
-    padding: 20px 30px 30px 30px
-  .card-upper
-    pointer-events: none
     display: flex
-    line-height: 0px
-    & > div
-      margin-left: 20px
+    flex-direction: row
+    overflow: visible
+    border-radius: 25px
+    border: none
+    min-height: 45vh
+    padding: 20px 30px 30px 30px
+  
+.icon
+  height: 65px
+  transform: translateY(-48%)
+.card-upper
+  pointer-events: none
+  display: flex
+  margin-top: -20px
+  flex-direction: column
+  line-height: 0px
+  & > div
+    text-align: center
+.card-lower
+  margin-top: 20px
+  pointer-events: none
+  font-size: 14px
+  text-align: center
+  margin-top: 5%
+  overflow: hidden
+  color:  rgba(255, 255, 255, 0.2)
+  line-height: 20px
+.name
+  color: rgb(228, 230, 235)
+  font-size: 24px
+  line-height: 2px
+.position
+  font-size: 12px
+  color: #fff
+  margin-top: -12px
+  line-height: 12px
+  margin-bottom: 20px
+  
+.relation
+  font-size: 12px
+  margin-top: -4px
+  color: #3F3B3B
 
-  .card-lower
-    margin-top: 20px
-    pointer-events: none
-    font-size: 100%
-    color:  rgba(255, 255, 255, 0.3)
-    line-height: 20px
-  .name
-    color: rgb(228, 230, 235)
-    font-size: 24px
-    line-height: 2px
-  .position
-    font-size: 12px
-    color: #fff
-    margin-top: -12px
-    line-height: 12px
-    margin-bottom: 20px
-  
-  .relation
-    font-size: 12px
-    margin-top: -4px
-    color: #3F3B3B
-  
+.current
+  opacity: 1 !important
   </style>
   
