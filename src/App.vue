@@ -368,8 +368,8 @@ export default {
 
 @media (max-width: 520px)
   #navbar
-    right: -60px
-    bottom: 25px
+    right: -65px
+    bottom: 30px
   .router-link
     font-size: 10px
     &.active
@@ -379,9 +379,9 @@ export default {
     height: 18px !important
 
   #header-section
-    padding: 10px 20px 0 20px
+    padding: 5px 20px 0 20px
   #footer-section
     padding: 20px 20px 0 20px
   #body-section
-    height: calc(100% - 150px)
+    height: calc(100% - 145px)
 </style>
