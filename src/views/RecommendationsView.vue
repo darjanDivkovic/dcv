@@ -133,7 +133,6 @@
       const slider = document.getElementById('cards')
       this.slider = slider
       this.slider.addEventListener('mousedown', (e) => {
-        console.log('e', e.target)
         this.isDown = true;
         this.slider.classList.add('active');
         this.startX = e.pageX - this.slider.offsetLeft;
@@ -153,7 +152,6 @@
         const x = e.pageX - this.slider.offsetLeft;
         const walk = (x - this.startX) * 1.2; //scroll-fast
         this.slider.scrollLeft = this.scrollLeft - walk;
-        //console.log(walk);
       });
     },
   }
@@ -175,7 +173,7 @@
     overflow: visible
     bottom: 80px
     padding: 10px 0
-    margin-left: 30px
+    margin-left: 20px
     opacity: 0
     width: calc(100% - 32px)
     display: flex
@@ -207,6 +205,8 @@
 .icon
   height: 65px
   transform: translateY(-48%)
+  filter: drop-shadow(0px 5px 5px rgba(232, 206, 56, 0.2))
+
 .card-upper
   pointer-events: none
   display: flex

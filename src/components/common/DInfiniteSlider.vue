@@ -41,19 +41,11 @@ export default {
   },
   watch: {
     boxes(boxes) {
-      console.log('setting up loop with boxes', boxes)
       this.setLoop(boxes)
-      console.log('set loop', this.loop)
     },
   },
-  beforeMount() {
-    console.log('this', this.skills)
-  },
   mounted() {
-  console.log('mounted', this.$props.shouldRevert)
     this.setBoxes()
-    console.log('boxes', this.boxes)
-    console.log('after mount: ', this.boxes, this.loop)
     this.loop = horizontalLoop(this.boxes, {
         paused: false,
         repeat: -1,

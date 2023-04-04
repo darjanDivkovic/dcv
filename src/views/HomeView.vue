@@ -80,9 +80,8 @@ export default {
   -webkit-background-clip: text
   font-size: 75px
   & > .char
+    
 #explore-btn
-  margin-top: 20px
-  overflow: hidden
   & > button
     opacity: 0
     transform: translateY(100%)

@@ -35,6 +35,7 @@
         </nav>
       </div>
     </div>
+    <div class="cursor2"></div>
   </div>
 </template>
 
@@ -42,7 +43,7 @@
 import DLogo from '@/components/common/DLogo.vue';
 import DBackground from './components/common/DBackground.vue';
 import DButton from './components/common/DButton.vue';
-
+import { initiateCursor } from './helpers/cursor-helper';
 import { gsap } from 'gsap'
 
 const PAGES = ['', 'skills', 'experience', 'recommendations', 'schedule_a_talk'];
@@ -99,16 +100,9 @@ export default {
     currentLogoColor() {
       return COLORS.find(color => color.name === this.$route.name).decimal
     }
-    /*
-    currentLogoColor() {
-      //console.log('this.', this.page_position)
-      return COLORS[this.page_position].decimal
-    }
-    */
   },
   methods: {
     getPagePosition() {
-      //console.log('a', COLORS.findIndex(color => color.name === this.$route.name), typeof this.$route.name)
       this.page_position = COLORS.findIndex(color => color === this.$route.name)
     },
     goToLinkedIn() {
@@ -177,6 +171,7 @@ export default {
     },
   },
   mounted() {
+    initiateCursor();
     const index = COLORS.findIndex(page => page.name === this.$route.name)
     this.page_position = index >= 0 ? index : 0
     window.addEventListener('wheel', this.handleWheel)
@@ -296,7 +291,7 @@ export default {
   &.active
     transform: scale(1.3)    
     color: rgba(228, 230, 235, 1)
-    line-height: 24px
+    
     &:after
       content: ''
       position: absolute

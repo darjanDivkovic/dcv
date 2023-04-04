@@ -111,7 +111,8 @@ export default {
   font-weight: 300
   line-height: 0px
 .plus
-  padding-top: 15px
+  padding-top: 25px
+  font-weight: 500
   line-height: 0
 .text
   height: max-content

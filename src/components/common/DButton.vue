@@ -1,5 +1,5 @@
 <template>
-    <button id="d-button">{{ text }}
+    <button class="d-button pulse">{{ text }}
     <img class="d-button-img" src="@/assets/small_links/handshake.svg" alt="">
     </button>
 </template>
@@ -12,7 +12,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-#d-button
+.d-button
     font-size: 16px
     font-family: primary
     font-weight: 300
@@ -28,4 +28,14 @@ export default {
 .d-button-img
     height: 18px
     margin-left: 5px
+
+.pulse:focus 
+  animation: pulse 1s
+  box-shadow: 0 0 0 1em rgba(#fff,0)
+
+@keyframes pulse
+  0%
+    box-shadow: 0 0 0 0 #a972cb
+
 </style>
+

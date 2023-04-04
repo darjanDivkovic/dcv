@@ -22,15 +22,12 @@
             color(val) {
                 const rotationY = this.mesh.rotation.y
                 const rotationX = this.mesh.rotation.x
-                console.log('aa', rotationX, rotationY)
                 this.scene.remove(this.mesh)
-                //this.init(val)
                 this.createMesh(val, rotationX, rotationY)
             }
         },
         methods: {
         init: function(color) {
-            //document.getElementById('container').remove();
             let container = document.getElementsByClassName('container')[0];
     
             this.camera = new Three.PerspectiveCamera(30, container.clientWidth/container.clientHeight, 0.1);
