@@ -37,5 +37,14 @@ export default {
   0%
     box-shadow: 0 0 0 0 #a972cb
 
+@media (max-width: 965px)
+.d-button
+    font-size: 12px
+    padding: 8px 10px
+    border-radius: 8px
+    margin-top: 5px
+    max-height: 30px
+.d-button-img
+    height: 12px
 </style>
 

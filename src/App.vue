@@ -345,14 +345,43 @@ export default {
     left: auto
     width: calc(max-content + 20px)
     height: calc(max-content + 20px)
-    right: -45px
+    right: -70px
     bottom: 30px
     padding: 0
   .router-link
     margin-left: auto
     padding: 4px 0
-    font-size: 12px
+    font-size: 16px
     text-align: right
     &.active
       transform: translateX(-2%)
+
+@media (max-width: 965px)
+  .dropdown
+    visibility: hidden
+    display: none
+  .d-button
+    padding: 8px 10px
+    &.pulse
+      min-width: max-content
+      padding: 8px 10px
+
+@media (max-width: 520px)
+  #navbar
+    right: -60px
+    bottom: 25px
+  .router-link
+    font-size: 10px
+    &.active
+      &:after
+        all: unset 
+  .github, .linkedin
+    height: 18px !important
+
+  #header-section
+    padding: 10px 20px 0 20px
+  #footer-section
+    padding: 20px 20px 0 20px
+  #body-section
+    height: calc(100% - 150px)
 </style>

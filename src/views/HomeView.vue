@@ -85,4 +85,30 @@ export default {
   & > button
     opacity: 0
     transform: translateY(100%)
+
+@media (max-width: 1200px)
+  .header
+    font-size: 55px
+  .text
+    font-size: 16px !important
+
+  .d-btn
+    margin-top: 20px
+
+@media (max-width: 850px)
+  .header
+    font-size: 45px
+  .text
+    font-size: 14px !important
+
+@media (max-width: 520px)
+  .header
+    font-size: 24px
+
+  .text
+    font-size: 10px !important
+    line-height: 14px !important
+
+  .d-btn
+    margin-top: 12px
 </style>

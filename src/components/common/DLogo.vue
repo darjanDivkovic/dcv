@@ -112,4 +112,19 @@ export default {
   font-weight: 300
   letter-spacing: 1px
   opacity: 0.5
+
+@media (max-width: 520px)
+  #container 
+    min-height: 45px
+    max-height: 45px
+    width: 50px
+  #logo
+    margin-left: -10px
+    & > div
+      margin-left: 0
+      & > p
+        font-size: 12px
+  .small
+    font-size: 8px
+    font-weight: 100
 </style>

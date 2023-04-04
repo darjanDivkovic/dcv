@@ -126,6 +126,9 @@ export default {
 
 .d-background-inner
    height: 100%
+
+@media (max-width: 520px)
+  #d-background
 </style>
 
 PURPLE
