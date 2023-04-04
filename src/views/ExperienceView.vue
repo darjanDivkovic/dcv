@@ -20,7 +20,7 @@
             <p class="count">3</p>
             <p class="plus">+</p>
           </div>
-          <p class="text">YEARS IN THE INDUSTRY</p>
+          <p class="text">YEARS IN IT</p>
         </div>
         <div class="count-box">
           <div class="count-box-top">
@@ -38,9 +38,9 @@
       </div>
       
       <div class="company-container">
-        <img class="bild" src="@/assets/company_icons/bild.svg" alt="">
-        <img src="@/assets/company_icons/pequity.svg" alt="">
-        <img class="inos" src="@/assets/company_icons/innoscripta.svg" alt="">
+        <img class="bild comp-icon" src="@/assets/company_icons/bild.svg" alt="">
+        <img src="@/assets/company_icons/pequity.svg" alt="" class="comp-icon">
+        <img class="inos comp-icon" src="@/assets/company_icons/innoscripta.svg" alt="">
 
       </div>
     </div>
@@ -109,6 +109,7 @@ export default {
 .count
   font-size: 80px
   font-weight: 300
+  color: #F37959
   line-height: 0px
 .plus
   padding-top: 25px
@@ -150,4 +151,82 @@ export default {
 
 .bild
   opacity: 0.5 !important
+
+@media (max-width: 1250px)
+  .experience
+    display: flex
+    height: calc(100vh - 330px)
+    justify-content: space-between
+    
+    .count-container
+      display: grid
+      justify-content: space-between
+      grid-gap: 10px
+      grid-template-columns: repeat(auto-fill, minmax(150px, 19%))
+      max-width: 100%
+    .count
+      min-width: 20%
+      font-size: 50px
+      line-height: 55px
+    flex-direction: column
+  .header
+    font-size: 55px
+  
+@media (max-width: 1050px)
+  .header
+    font-size: 45px
+    line-height: 49px
+
+  .company-container
+    display: flex
+    justify-content: space-between
+    background: none
+    border: none
+    & > img
+      transform: scale(1)
+      height: 30%
+      width: 30%
+      margin: 0 10px
+
+@media (max-width: 520px)
+  .experience
+    .count-container
+      display: grid !important
+      justify-content: center !important
+      margin-top: 50px
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr))
+      max-width: 100%
+  .header
+    font-size: 22px
+    text-align: center
+    transform: translateX(-10%)
+  .count
+    font-size: 20px !important
+    font-weight: 300
+    line-height: 30px
+    min-width: 0 !important
+    margin-top: -20px
+
+  .company-container
+    margin-top: 10px
+  .count-box
+    max-height: 70px
+    &:last-of-type
+     transform: translateX(calc(50% + 10px)) 
+  .plus
+    opacity: 0
+  .text
+    height: max-content
+    font-size: 12px
+    min-height: max-content
+    height: 23px
+    font-weight: 200
+    position: absolute
+    bottom: 8px
+    width: max-content
+    padding-top: -2px
+    border-bottom: 0
+    line-height: 24px
+
+  
 </style>

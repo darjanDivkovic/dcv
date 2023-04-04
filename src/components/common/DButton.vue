@@ -1,6 +1,6 @@
 <template>
-    <button class="d-button pulse">{{ text }}
-    <img class="d-button-img" src="@/assets/small_links/handshake.svg" alt="">
+    <button class="d-button">{{ text }}
+        <img class="d-button-img" src="@/assets/small_links/handshake.svg" alt="">
     </button>
 </template>
 
@@ -13,38 +13,40 @@ export default {
 
 <style lang="sass" scoped>
 .d-button
-    font-size: 16px
+    font-size: 16px !important
     font-family: primary
-    font-weight: 300
+    font-weight: 400
     display: flex
+    opacity: 0
     align-items: center 
     line-height: 0
     color: #fff
-    padding: 12px 15px
+    padding: 12px 15px !important
     background: none
     border: 1px solid rgba(86, 81, 81, 0.1)
     border-radius: 5px
     cursor: pointer
+    transition: all 100ms
+    
 .d-button-img
     height: 18px
     margin-left: 5px
 
-.pulse:focus 
-  animation: pulse 1s
-  box-shadow: 0 0 0 1em rgba(#fff,0)
-
-@keyframes pulse
-  0%
-    box-shadow: 0 0 0 0 #a972cb
-
 @media (max-width: 965px)
-.d-button
-    font-size: 12px
-    padding: 8px 10px
-    border-radius: 8px
-    margin-top: 5px
-    max-height: 30px
-.d-button-img
-    height: 12px
+    .d-button
+        font-size: 14px !important
+        padding: 15px 16px
+        border-radius: 8px
+        margin-top: 5px
+        max-height: 30px
+    .d-button-img
+        height: 12px
+
+@media (max-width: 520px)
+    .d-button   
+        font-size: 12px !important
+        padding: 15px 10px
+        width: max-content
+
 </style>
 

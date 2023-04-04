@@ -56,9 +56,10 @@ export default {
 
 <style lang="sass" scoped>
 .wrapper
+  position: absolute
   height: 120px 
-  width: 120%
-  margin-left: -65px
+  left: -20px
+  min-width: calc(100vw - 2px)
   background: none
   position: absolute
   display: flex
@@ -90,9 +91,25 @@ export default {
   display: flex
   align-items: center
   justify-content: center
-  background-color: rgba(25, 24, 24, 0.3)
+  background-color: rgba(18, 18, 18, 0.5)
   & > img
     position: absolute
     transform: scale(1)
     opacity: 0.8
+
+@media (max-width: 520px)
+
+  .wrapper
+    width: calc(120vw)
+    margin-top: -40px
+    left: -80px
+
+  .box
+    max-height: 80% !important
+    width: calc(13%) 
+  .img-box
+    height: 50px !important
+    width: 50px
+    & > img
+      transform: scale(0.5)
 </style>

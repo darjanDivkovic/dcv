@@ -1,19 +1,21 @@
 <template>
     <div class="recommendations">
       <h1 class="header">Discover why industry professionals recommend me</h1>
-      <div id="cards">
-        <carousel-3d>
-          <slide v-for="(card, index) in PEOPLE" :key="card.name" :index="index" class="card">
-            <div class="card-upper">
-            <img :src="card.src" alt="" class="icon">
-            <div>
-              <p class="name">{{ card.name }}</p>
-              <p class="position">{{ card.position }}</p>
-              <p class="relation">{{ card.relation }}</p>
-            </div>
-            <div class="card-lower">
-            {{ card.comment }}
-            </div>
+      <div id="cards-container">
+        <carousel-3d :width="slidePrefferedWidth" height="600" :display="slidesToShow" :minSwipeDistance="1">
+          <slide v-for="(card, index) in PEOPLE" :key="card.name" :index="index">
+            <div class="card">
+              <div class="card-upper">
+                <img :src="card.src" alt="" class="icon" />
+                <div class="inner">
+                  <p class="name">{{ card.name }}</p>
+                  <p class="position">{{ card.position }}</p>
+                  <p class="relation">{{ card.relation }}</p>
+                </div>
+              </div>
+              <div class="card-lower">
+                {{ card.comment }}
+              </div>
           </div>
           </slide>
         </carousel-3d>
@@ -99,7 +101,7 @@
     src: PetarIcon,
     position: 'Software Developer at Pequity',
     relation: 'Petar worked with Darjan on the same team',
-    comment: `I am delighted to recommend Darjan for his exceptional Frontend development skills in Javascript, Vue.js, and his keen eye for pixel-perfect designs. During our time working together, Darjan demonstrated a remarkable ability to bring ideas to life through his expertise in Javascript and Vue.js. He was instrumental in delivering some of the complex frontend projects for our clients, and his work exceeded expectations. He has an great grasp of frontend frameworks and is always up to date with the latest trends and technologies. Furthermore, Darjan consistently delivered designs that were not only visually appealing but also functional and user-friendly. He demonstrated a remarkable attention to detail and was able to implement pixel-perfect designs with precision and efficiency. Overall, I wholeheartedly recommend Darjan for any Frontend position that requires expertise in Javascript, Vue.js and pixel-perfect design. His skills and work ethic make him a valuable asset to any team.`,
+    comment: `I am delighted to recommend Darjan for his exceptional Frontend development skills in Javascript, Vue.js, and his keen eye for pixel-perfect designs. During our time working together, Darjan demonstrated a remarkable ability to bring ideas to life through his expertise in Javascript and Vue.js. He was instrumental in delivering some of the complex frontend projects for our clients, and his work exceeded expectations. He has an great grasp of frontend frameworks and is always up to date with the latest trends and technologies. Furthermore, Darjan consistently delivered designs that were not only visually appealing but also functional and user-friendly. He demonstrated a remarkable attention to detail and was able to implement pixel-perfect designs with precision and efficiency. Overall, I wholeheartedly recommend Darjan for any Frontend position that requires expertise in Javascript, Vue.js and pixel-perfect design.`,
   },
   { 
     name: 'Warren Lebovics',
@@ -119,40 +121,35 @@
         isDown: true,
         startX: null,
         scrollLeft: null,
+        width: document.body.clientWidth,
       }
     },
     components: {
       Carousel3d,
       Slide,
     },
+    methods: {
+      onresize() {
+        //your code here
+        //this is just an example
+        this.width = document.body.clientWidth;
+      }
+    },
+    computed: {
+      slidesToShow() {
+        return this.width > 1150 ? 8 : 3
+      },
+      slidePrefferedWidth() {
+        return this.width < 400 ? this.width - 80 : 600
+      }
+    },
     mounted() {
       const myText = new SplitType('.header')
       gsap.fromTo('.char',{filter: 'blur(6px)', opacity: 0}, { filter: 'blur(0px)', opacity: 1, delay: 1, duration: 0.3, stagger: 0.05})
-      gsap.fromTo('#cards', { opacity: 0}, { opacity: 1, delay: 3.5, duration: 0.5, })
+      gsap.fromTo('#cards-container', { opacity: 0}, { opacity: 1, delay: 3.5, duration: 0.5, })
 
-      const slider = document.getElementById('cards')
-      this.slider = slider
-      this.slider.addEventListener('mousedown', (e) => {
-        this.isDown = true;
-        this.slider.classList.add('active');
-        this.startX = e.pageX - this.slider.offsetLeft;
-        this.scrollLeft = this.slider.scrollLeft;
-      });
-      this.slider.addEventListener('mouseleave', () => {
-        this.isDown = false;
-        this.slider.classList.remove('active');
-      });
-      this.slider.addEventListener('mouseup', () => {
-        this.isDown = false;
-        this.slider.classList.remove('active');
-      });
-      this.slider.addEventListener('mousemove', (e) => {
-        if(!this.isDown) return;
-        e.preventDefault();
-        const x = e.pageX - this.slider.offsetLeft;
-        const walk = (x - this.startX) * 1.2; //scroll-fast
-        this.slider.scrollLeft = this.scrollLeft - walk;
-      });
+      window.addEventListener("resize", this.onresize);
+
     },
   }
   </script>
@@ -160,87 +157,112 @@
   <style lang="sass" scoped>
   .recommendations
     position: relative
+    padding-top: 20px
     height: 100%
     
     & > h1
       text-align: center
       font-size: 75px
+      width: 100%
       line-height: 100px
-
-  #cards
-    position: absolute
-    overflow-x: scroll
-    overflow: visible
-    bottom: 80px
-    padding: 10px 0
-    margin-left: 20px
-    opacity: 0
-    width: calc(100% - 32px)
-    display: flex
-    flex-direction: row
-    &::-webkit-scrollbar
-      display: none
-
-  .carousel-3d-container
-    padding: 0 !important
-    height: 55vh !important
-    -webkit-transform-style: preserve-3d !important
-    margin-left: -80px
   
+  #cards-container
+    margin-bottom: 10px
+    width: calc(100% + 60px)
+    transform: translateX(-30px)
   .card
-    border: 1px solid blue
-    margin-top: 0px !important
-    min-width: 500px
-    margin-top: 95px !important
-    opacity: 1 
     background-color: #121212
     display: flex
-    flex-direction: row
-    overflow: visible
-    border-radius: 25px
-    border: none
-    min-height: 45vh
-    padding: 20px 30px 0px 30px
+    flex-direction: column
+    overflow: hidden
+    max-height: 45vh !important  
+    border-radius: 50px
+    min-height: max-content
+    max-height: 30vh
     filter: drop-shadow(0px 5px 5px rgba(232, 206, 56, 0.1))
-.icon
-  height: 65px
-  transform: translateY(-48%)
-  filter: drop-shadow(0px 5px 5px rgba(232, 206, 56, 0.2))
+    padding: 25px
 
-.card-upper
-  pointer-events: none
-  display: flex
-  margin-top: -20px
-  flex-direction: column
-  line-height: 0px
-  & > div
+  .current
+    filter: brightness(100%) !important
+  .card-upper
+    display: flex
+    flex-direction: row
+  .carousel-3d-slide
+    border: none
+    background: none
+    overflow: visible !important
+    filter: brightness(60%)
+
+  .icon
+    height: 60px
+    width: max-content
+    opacity: 0.8
+
+  .name
+    color: rgba(254, 254, 254, 0.8)
+    text-transform: uppercase
+    font-weight: 500
+    letter-spacing: 3px
+    margin-left: 20px
+    margin-top: 5px
+    color: #FFB754
+    
+  .position
+    color: rgba(254, 254, 254, 0.6)
+    font-size: 14px
+    margin-left: 20px
+    margin-top: -10px
+
+  .relation
+    color: rgba(254, 254, 254, 0.2)
+    font-size: 10px
+    margin-left: 20px
+    margin-top: -15px
+
+  .card-lower
+    padding-top: 20px
     text-align: center
-.card-lower
-  margin-top: 20px
-  pointer-events: none
-  font-size: 14px
-  text-align: center
-  margin-top: 5%
-  overflow: hidden
-  color:  rgba(255, 255, 255, 0.2)
-  line-height: 25px
-.name
-  color: rgb(228, 230, 235)
-  font-size: 24px
-  line-height: 2px
-.position
-  font-size: 12px
-  color: #fff
-  margin-top: -12px
-  line-height: 12px
-  margin-bottom: 20px
-  
-.relation
-  font-size: 12px
-  margin-top: -4px
-  color: #3F3B3B
+    font-size: 15px
+    color: rgba(254, 254, 254, 0.8)
 
-.current
-  opacity: 1 !important
+@media (max-width: 1200px)
+  .header
+    font-size: 55px !important
+    line-height: 54px !important
+
+@media (max-width: 850px)
+
+  .header
+    font-size: 45px !important
+    line-height: 50px !important
+  .card-container
+    transform: translateY(50px)
+@media (max-width: 520px)
+  .header
+    font-size: 24px !important
+    line-height: 25px !important
+    color: red
+
+  .card
+    max-height: 40vh !important  
+    border-radius: 25px
+  .icon
+    height: 30px
+    position: relative
+
+  .name
+    font-size: 12px
+    margin-top: 0px
+
+  .position
+    font-size: 10px
+  .relation
+    font-size: 10px
+    margin-top: -5px
+
+  .card-lower
+    margin-top: -10px
+    font-size: 9px
+    line-height: 12px
   </style>
   

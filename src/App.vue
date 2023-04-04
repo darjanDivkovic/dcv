@@ -8,12 +8,12 @@
           <div class="dropdown">
             <h1>Portfolio<span>⮟</span></h1>
             <div class="button-container">
-              <button>[PDF, OCR] Download CV</button>
-              <button>[Figma] Download CV</button>
+              <a @click="handleDownloadPDF()">[PDF, OCR] Download CV</a>
+              <a>[Figma] Download CV</a>
             </div>
           </div>
           
-          <DButton text="Hire Me" />
+          <DButton text="Hire Me" class="d-btn" @click.native.prevent="handleHireClick()"/>
         </div>
       </div>
 
@@ -105,6 +105,10 @@ export default {
     getPagePosition() {
       this.page_position = COLORS.findIndex(color => color === this.$route.name)
     },
+    handleHireClick() {
+      const URL = 'https://calendly.com/darjan-developer/30min'
+      window.open(URL, '_blank')
+    },
     goToLinkedIn() {
       const URL = 'https://www.linkedin.com/in/darjan-divkovi%C4%87-171386163/'
       window.open(URL, '_blank')
@@ -136,6 +140,10 @@ export default {
         }
       }
     },
+    handleDownloadPDF() {
+      const URL = 'https://docs.google.com/document/d/1BmTHhmCxkDAURNTzJyT34VV_655E9wiQa080OEj0p94/edit?usp=sharing'
+      window.open(URL, '_blank')
+    },
     handleScrollUp() {
       if (this.page_position - 1 < 0) {
         this.page_position = PAGES.length - 1
@@ -162,15 +170,20 @@ export default {
     // HANDLE SWIPE UP AND DOWN
 
     checkDirection() {
+
       if (this.touchEndY < this.touchStartY) {
-        this.handleScrollDown();
+        const calc = this.touchStartY - this.touchEndY
+        if(calc > 200) this.handleScrollDown()
+
       }
       if (this.touchEndY > this.touchStartY) {
-        this.handleScrollUp();
+        const calc = this.touchEndY - this.touchStartY
+        if(calc > 200) this.handleScrollUp()
       }
     },
   },
   mounted() {
+
     initiateCursor();
     const index = COLORS.findIndex(page => page.name === this.$route.name)
     this.page_position = index >= 0 ? index : 0
@@ -197,7 +210,6 @@ export default {
 
     this.dropdownElem.addEventListener('mouseenter', () => dropdownAnim.play())
     this.dropdownElem.addEventListener('mouseleave', () => dropdownAnim.reverse())
-
 
   },
   destroyed() {
@@ -233,6 +245,7 @@ export default {
   display: flex
   justify-content: space-between
   align-items: center
+  
 #body-section
   flex-grow: 1
   height: calc(100% - 200px)
@@ -301,8 +314,11 @@ export default {
       width: 100%
       text-align: center
       border-top: 1px solid #fff
-    
 
+.header-right
+  & > .d-btn
+    opacity: 1 
+    
 .header-right
   display: flex
   & > div
@@ -326,14 +342,18 @@ export default {
   overflow: hidden
   height: 0px
   right: 20px
+  display: flex
+  flex-direction: column
   border: none
+  width: max-content
   border-top-left-radius: 5px
   border-bottom-left-radius: 5px
   position: absolute
-  & > button
+  & > a
     all: unset
     color: #fff
     font-size: 12px
+    width: max-content
     width: max-content
     padding: 10px 15px
     &:hover
@@ -355,21 +375,24 @@ export default {
     text-align: right
     &.active
       transform: translateX(-2%)
+      &:after
+        all: unset 
 
 @media (max-width: 965px)
   .dropdown
     visibility: hidden
     display: none
-  .d-button
-    padding: 8px 10px
     &.pulse
       min-width: max-content
       padding: 8px 10px
-
+  #body-section
+    height: calc(100% - 195px)
+  #navbar
+    right: -80px
 @media (max-width: 520px)
   #navbar
     right: -65px
-    bottom: 30px
+    bottom: 0px
   .router-link
     font-size: 10px
     &.active
@@ -384,4 +407,5 @@ export default {
     padding: 20px 20px 0 20px
   #body-section
     height: calc(100% - 145px)
+
 </style>

@@ -102,5 +102,34 @@ h1
   width: 70%
 .lower
   margin-top: 220px
-  margin-left: -5%
+
+@media (max-width: 1200px)
+  .header
+    width: 100%
+    font-size: 55px
+
+  .d-btn
+    margin-top: 20px
+
+  @media (max-width: 850px)
+  .header
+    font-size: 40px
+    line-height: 48px
+  .text
+    font-size: 14px !important
+
+
+@media (max-width: 520px)
+  .skills
+    margin-top: 50px
+  .header
+    width: 120%
+    transform: translateX(-10%)
+    font-size: 24px
+    text-align: center
+    line-height: 35px
+
+  .lower
+    margin-top: 130px
+    margin-left: 0px
 </style>
