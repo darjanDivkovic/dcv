@@ -1,6 +1,6 @@
 <template>
     <div class="recommendations">
-      <h1>Discover why industry professionals recommend me</h1>
+      <h1 class="header">Discover why industry professionals recommend me</h1>
       <div id="cards">
         <carousel-3d>
           <slide v-for="(card, index) in PEOPLE" :key="card.name" :index="index" class="card">
@@ -48,6 +48,7 @@
 
   import { gsap } from 'gsap'
   import { Carousel3d, Slide } from 'vue-carousel-3d';
+  import SplitType from 'split-type'
 
   const PEOPLE = [
   { 
@@ -125,6 +126,10 @@
       Slide,
     },
     mounted() {
+      const myText = new SplitType('.header')
+      gsap.fromTo('.char',{filter: 'blur(6px)', opacity: 0}, { filter: 'blur(0px)', opacity: 1, delay: 1, duration: 0.3, stagger: 0.05})
+      gsap.fromTo('#cards', { opacity: 0}, { opacity: 1, delay: 3.5, duration: 0.5, })
+
       const slider = document.getElementById('cards')
       this.slider = slider
       this.slider.addEventListener('mousedown', (e) => {
@@ -158,12 +163,9 @@
   .recommendations
     position: relative
     height: 100%
-    padding-right: 30px
+    
     & > h1
       text-align: center
-      background: -webkit-linear-gradient(30deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.4) 100%)
-      -webkit-background-clip: text
-      -webkit-text-fill-color: transparent
       font-size: 75px
       line-height: 100px
 
@@ -174,7 +176,7 @@
     bottom: 80px
     padding: 10px 0
     margin-left: 30px
-    padding-right: 0px
+    opacity: 0
     width: calc(100% - 32px)
     display: flex
     flex-direction: row
@@ -183,23 +185,25 @@
 
   .carousel-3d-container
     padding: 0 !important
-    margin: 0
-    height: 50vh !important
+    height: 55vh !important
+    -webkit-transform-style: preserve-3d !important
+    margin-left: -80px
+  
   .card
     border: 1px solid blue
-    margin-top: 40px
+    margin-top: 0px !important
     min-width: 500px
-    opacity: 1 !important
-    background-color: #191818
-    margin-right: 5%
+    margin-top: 95px !important
+    opacity: 1 
+    background-color: #121212
     display: flex
     flex-direction: row
     overflow: visible
     border-radius: 25px
     border: none
     min-height: 45vh
-    padding: 20px 30px 30px 30px
-  
+    padding: 20px 30px 0px 30px
+    filter: drop-shadow(0px 5px 5px rgba(232, 206, 56, 0.1))
 .icon
   height: 65px
   transform: translateY(-48%)
@@ -219,7 +223,7 @@
   margin-top: 5%
   overflow: hidden
   color:  rgba(255, 255, 255, 0.2)
-  line-height: 20px
+  line-height: 25px
 .name
   color: rgb(228, 230, 235)
   font-size: 24px

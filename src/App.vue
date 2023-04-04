@@ -50,7 +50,7 @@ const PAGE_NAMES = ['home', 'skills', 'experience', 'recommendations', 'schedule
 const COLORS = [
   {
     name: 'home',
-    hex: '#301E67',
+    hex: '#6639ED',
     decimal: 6699501
   },
   {

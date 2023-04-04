@@ -52,7 +52,7 @@
     
         },
         createMesh(color, rotationX, rotationY) {
-            let geometry = new Three.RingGeometry( 0., 1, 10 );
+            let geometry = new Three.RingGeometry( 0, 1, 10 );
             let material = new Three.MeshBasicMaterial({
                 wireframe: true,
                 color,
@@ -85,7 +85,7 @@
       align-items: center
       width: max-content
       position: absolute
-      opacity: 0.1
+      opacity: 0.15
       height: 60px
       & > div
         font-family: 'secondary'

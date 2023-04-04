@@ -98,6 +98,8 @@ h1
   font-size: 75px
   line-height: 100px
 
+.header
+  width: 70%
 .lower
   margin-top: 220px
   margin-left: -5%

@@ -68,7 +68,7 @@ export default {
         },  
       }
     });
-    gsap.fromTo('.company-container', {filter: 'blur(6px)', opacity: 0}, { filter: 'blur(0px)', opacity: 1, delay: 3.3, duration: 0.3})
+    gsap.fromTo('.company-container', {filter: 'blur(6px)', opacity: 0}, { filter: 'blur(0px)', opacity: 1, delay: 5.3, duration: 0.3})
 
   },
   beforeDestroy() {
