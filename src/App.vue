@@ -249,14 +249,15 @@ body
   
 #header-section
   display: flex
+  margin-top: 40px
   justify-content: space-between
   padding: 0 20px
   align-items: center
-  max-height: 7%
+  max-height: calc(7% - 40px)
 #body-section
   flex-grow: 1
   height: calc(86%)
-  padding: 0 20px
+  padding: 20px
   overflow: hidden
 #footer-section
   position: relative
@@ -410,11 +411,12 @@ body
     height: 18px !important
 
   #sections-container
-    height: 70vh
+    height: 50vh
+
   #header-section
     padding: 5px 20px 0 20px
   #footer-section
   #body-section
-    height: calc(80vh - 10px)
+    height: calc(80vh - 20px)
 
 </style>
