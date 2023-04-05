@@ -21,6 +21,8 @@ html {
     overflow: hidden !important;
     overflow-y: none !important;
     overflow-x: none !important;
+    min-height: -webkit-fill-available;
+
 }
 
 body {
