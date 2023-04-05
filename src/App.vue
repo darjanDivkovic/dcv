@@ -232,9 +232,9 @@ export default {
   src: url(../public/Montserrat.ttf) format("truetype")
 
 html
-  height: calc(var(--vh, 1vh) * 100)  
+  height: calc(var(--vh, 1vh) * 99) !important
 body 
-  height: calc(var(--vh, 1vh) * 100)
+  height: calc(var(--vh, 1vh) * 99) !important
 
 #app 
   min-height: -webkit-fill-available !important
