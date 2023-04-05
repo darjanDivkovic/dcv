@@ -12,7 +12,7 @@
               <a>[Figma] Download CV</a>
             </div>
           </div>
-          <DButton text="Hire Me" @click.native.prevent="handleHireClick()"/>
+          <DButton text="Hire Me" class="main-btn" @click.native.prevent="handleHireClick()"/>
         </div>
       </div>
 
@@ -251,11 +251,12 @@ body
 #header-section
   display: flex
   justify-content: space-between
+  padding: 0 20px
   align-items: center
   max-height: 7%
 #body-section
   flex-grow: 1
-  height: calc(88%)
+  height: calc(86%)
   overflow: hidden
 #footer-section
   position: relative
@@ -263,7 +264,7 @@ body
   flex-direction: row
   align-items: center
   height: 5%
-
+  padding: 0 30px
 #navbar
   position: absolute
   left: 50%
@@ -320,6 +321,8 @@ body
       text-align: center
       border-top: 1px solid #fff
 
+.main-btn
+  opacity: 1 !important
     
 .header-right
   display: flex
