@@ -65,8 +65,8 @@ export default {
     },
     animate: function() {
         requestAnimationFrame(this.animate);
-        this.mesh.rotation.y += 0.002;
-        this.mesh.rotation.x -= 0.002;
+        this.mesh.rotation.y += 0.004;
+        this.mesh.rotation.x -= 0.004;
         this.renderer.render(this.scene, this.camera);
     }
   },
@@ -91,9 +91,10 @@ export default {
     line-height: 0.8
     & > p
       margin: 0
-      font-size: 24px
       font-weight: 400
       letter-spacing: 3px
+      width: max-content
+      font-size: 3vh
       color: #e4e6eb
       font-family: primary
 .position

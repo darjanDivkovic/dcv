@@ -66,7 +66,7 @@ export default {
 
   & > p
     text-align: center
-    font-size: 20px
+    font-size: 8vh
     opacity: 0
     transform: translateY(120%)
     line-height: 30px
@@ -91,7 +91,7 @@ export default {
   overflow: hidden
 .header
   -webkit-background-clip: text
-  font-size: 75px
+  font-size: 8vh
   & > .char
 #explore-btn
   margin-top: 20px
@@ -102,7 +102,7 @@ export default {
 
 @media (max-width: 1200px)
   .header
-    font-size: 55px
+    font-size: 3vh
   .text
     font-size: 16px !important
 
@@ -111,13 +111,11 @@ export default {
 
 @media (max-width: 850px)
   .header
-    font-size: 45px
   .text
     font-size: 14px !important
 
 @media (max-width: 520px)
   .header
-    font-size: 24px
 
   .text
     font-size: 10px !important

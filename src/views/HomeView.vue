@@ -52,7 +52,7 @@ export default {
   flex-direction: column
   justify-content: center
   align-items: center 
-
+  font-weight: 500
 .text-container
   overflow: hidden
 
@@ -64,9 +64,9 @@ export default {
     color: rgba(255, 255, 255, 0.3)
     & > .purple-span
       color: #6639ED
-      font-weight: 600
+      font-weight: 500
     & > .grey-span
-      font-weight: 600
+      font-weight: 500
 
 .header
   text-align: center
@@ -87,7 +87,8 @@ export default {
 
 @media (max-width: 1200px)
   .header
-    font-size: 55px
+    font-size: 4vh
+    width: 100% !important
   .text
 
   .d-btn
@@ -99,7 +100,6 @@ export default {
 
 @media (max-width: 520px)
   .header
-    font-size: 24px
 
   .text
 

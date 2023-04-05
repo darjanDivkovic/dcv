@@ -172,13 +172,13 @@ export default {
 
       if (this.touchEndY < this.touchStartY) {
         const calc = this.touchStartY - this.touchEndY
-        const screenHeightPart = this.heightWindow * 0.4
+        const screenHeightPart = this.heightWindow * 0.2
         if(calc > screenHeightPart) this.handleScrollDown()
 
       }
       if (this.touchEndY > this.touchStartY) {
         const calc = this.touchEndY - this.touchStartY
-        const screenHeightPart = this.heightWindow * 0.4
+        const screenHeightPart = this.heightWindow * 0.2
         if(calc > screenHeightPart) this.handleScrollUp()
       }
     },
@@ -391,10 +391,10 @@ export default {
     right: -80px
 @media (max-width: 520px)
   #navbar
-    right: -65px
+    right: -85px
     bottom: 0px
   .router-link
-    font-size: 10px
+    font-size: 13px
     &.active
       &:after
         all: unset 
@@ -406,6 +406,6 @@ export default {
   #footer-section
     padding: 20px 20px 0 20px
   #body-section
-    height: calc(80vh - 80px)
+    height: calc(80vh - 100px)
 
 </style>

@@ -23,12 +23,13 @@ export default {
     line-height: 0
     color: #fff
     padding: 5px 10px !important
-    width: max-content !important
     background: none
     border: 1px solid rgba(86, 81, 81, 0.1)
     border-radius: 5px
     cursor: pointer
     transition: all 100ms
+    & > p
+        width: max-content !important
     
 .d-button-img
     height: 18px
