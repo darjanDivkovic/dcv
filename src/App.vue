@@ -426,6 +426,6 @@ body
   #footer-section
     padding: 0 30px 0 20px
   #body-section
-    height: calc(90vh - 40px)
+    height: calc(90vh - 50px)
 
 </style>
