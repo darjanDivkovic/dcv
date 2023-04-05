@@ -411,7 +411,7 @@ body
     height: 18px !important
 
   #sections-container
-    height: 50vh
+    height: 0vh
 
   #header-section
     padding: 5px 20px 0 20px
