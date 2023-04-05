@@ -406,6 +406,6 @@ export default {
   #footer-section
     padding: 20px 20px 0 20px
   #body-section
-    height: calc(80vh - 100px)
+    height: calc(80vh - 90px)
 
 </style>
