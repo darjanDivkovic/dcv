@@ -82,7 +82,7 @@ export default {
       align-items: center
       width: max-content
       position: absolute
-      opacity: 0.2
+      opacity: 0.4
       height: 60px
       & > div
         font-family: 'secondary'

@@ -89,6 +89,7 @@ export default {
       PAGE_NAMES,
       dropdownAnim: null,
       dropdownElem: null,
+      heightWindow: window.innerHeight,
     }
   },
   components: {
@@ -173,12 +174,14 @@ export default {
 
       if (this.touchEndY < this.touchStartY) {
         const calc = this.touchStartY - this.touchEndY
-        if(calc > 200) this.handleScrollDown()
+        const screenHeightPart = this.heightWindow * 0.1
+        if(calc > screenHeightPart) this.handleScrollDown()
 
       }
       if (this.touchEndY > this.touchStartY) {
         const calc = this.touchEndY - this.touchStartY
-        if(calc > 200) this.handleScrollUp()
+        const screenHeightPart = this.heightWindow * 0.01
+        if(calc > screenHeightPart) this.handleScrollUp()
       }
     },
   },
@@ -406,6 +409,6 @@ export default {
   #footer-section
     padding: 20px 20px 0 20px
   #body-section
-    height: calc(100% - 145px)
+    height: calc(100% - 175px)
 
 </style>

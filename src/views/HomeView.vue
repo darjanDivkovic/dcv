@@ -58,10 +58,9 @@ export default {
 
   & > p
     text-align: center
-    font-size: 20px
+    font-size: 1.8vh
     opacity: 0
     transform: translateY(120%)
-    line-height: 30px
     color: rgba(255, 255, 255, 0.3)
     & > .purple-span
       color: #6639ED
@@ -71,14 +70,15 @@ export default {
 
 .header
   text-align: center
-  & > div
 
 .header-container
   overflow: hidden
 .header
   -webkit-background-clip: text
-  font-size: 75px
+  font-size: 8vh
+  height: 100%
   & > .char
+    opacity: 1
     
 #explore-btn
   & > button
@@ -89,24 +89,19 @@ export default {
   .header
     font-size: 55px
   .text
-    font-size: 16px !important
 
   .d-btn
     margin-top: 20px
 
 @media (max-width: 850px)
   .header
-    font-size: 45px
   .text
-    font-size: 14px !important
 
 @media (max-width: 520px)
   .header
     font-size: 24px
 
   .text
-    font-size: 10px !important
-    line-height: 14px !important
 
   .d-btn
     margin-top: 12px
