@@ -16,6 +16,7 @@ export default {
   color: #fff
   border: 1px solid rgba(86, 81, 81, 0.1)
   display: flex
+  opacity: 0
   justify-items: center
   align-items: center
   border-radius: 10px

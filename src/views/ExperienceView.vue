@@ -196,7 +196,7 @@ export default {
       grid-template-columns: repeat(auto-fit, minmax(100px, 1fr))
       max-width: 100%
   .header
-    font-size: 22px
+    font-size: 3vh !important
     text-align: center
     transform: translateX(-10%)
   .count

@@ -13,7 +13,7 @@
       </div>
       
       <div id="explore-btn">
-        <DButton text="Let's Talk !" @click.prevent.native="handleHireClick()"/>
+        <DButton text="Let's Talk !" class="d-btn" @click.prevent.native="handleHireClick()"/>
       </div>
     </div>
   </div>
@@ -76,6 +76,9 @@ export default {
     & > .grey-span
       font-weight: 600
 
+.d-btn
+  padding: 5px 10px
+  opacity: 0
 .header
   text-align: center
   & > div
@@ -101,17 +104,8 @@ export default {
 
 @media (max-width: 1200px)
   .header
-    font-size: 4vh
+    font-size: 3vh !important
   .text
-    font-size: 16px !important
-@media (max-width: 850px)
-  .header
-  .text
-    font-size: 14px !important
+    font-size: calc(2vh - 3px) !important
 
-@media (max-width: 520px)
-  .header
-
-  .text
-    font-size: 10px !important
 </style>

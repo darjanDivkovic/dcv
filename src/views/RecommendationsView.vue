@@ -80,7 +80,7 @@
     src: JKimIcon,
     position: 'Design @ Pequity | Prev @Instagram, @Linkedin',
     relation: 'Joseph worked with Darjan on the same team',
-    comment: `Darjan is an engineer who thinks like a designer. He can turn any design into a flawless and stunning feature that delights your end users. He did an amazing job when we worked on our interactive offer letter redesign, where he built a fully responsive and dynamic page consisting of animated pie charts that broke down compensation packages, cover gradients generated from the company logo, and equity projections based on future valuations. It was a huge challenge to create both the builder and the public facing experience, but Darjan nailed it. He would be a great asset to any design-led company that wants to wow its customers. I would love to work with him again in the future. Here is a link to the feature Darjan built: https://demo.pequity.app/visual-offers/corey-siphon-3f2b5ffc.`,
+    comment: `Darjan is an engineer who thinks like a designer. He can turn any design into a flawless and stunning feature that delights your end users. He did an amazing job when we worked on our interactive offer letter redesign, where he built a fully responsive and dynamic page consisting of animated pie charts that broke down compensation packages, cover gradients generated from the company logo, and equity projections based on future valuations. It was a huge challenge to create both the builder and the public facing experience, but Darjan nailed it. He would be a great asset to any design-led company that wants to wow its customers. I would love to work with him again in the future.`,
   },
   { 
     name: 'Joseph Lee',
@@ -101,7 +101,7 @@
     src: PetarIcon,
     position: 'Software Developer at Pequity',
     relation: 'Petar worked with Darjan on the same team',
-    comment: `I am delighted to recommend Darjan for his exceptional Frontend development skills in Javascript, Vue.js, and his keen eye for pixel-perfect designs. During our time working together, Darjan demonstrated a remarkable ability to bring ideas to life through his expertise in Javascript and Vue.js. He was instrumental in delivering some of the complex frontend projects for our clients, and his work exceeded expectations. He has an great grasp of frontend frameworks and is always up to date with the latest trends and technologies. Furthermore, Darjan consistently delivered designs that were not only visually appealing but also functional and user-friendly. He demonstrated a remarkable attention to detail and was able to implement pixel-perfect designs with precision and efficiency. Overall, I wholeheartedly recommend Darjan for any Frontend position that requires expertise in Javascript, Vue.js and pixel-perfect design.`,
+    comment: `I am delighted to recommend Darjan for his exceptional Frontend development skills in Javascript, Vue.js, and his keen eye for pixel-perfect designs. During our time working together, Darjan demonstrated a remarkable ability to bring ideas to life through his expertise in Javascript and Vue.js. He was instrumental in delivering some of the complex frontend projects for our clients, and his work exceeded expectations. He has an great grasp of frontend frameworks and is always up to date with the latest trends and technologies. Furthermore, Darjan consistently delivered designs that were not only visually appealing but also functional and user-friendly. He demonstrated a remarkable attention to detail and was able to implement pixel-perfect designs with precision and efficiency.`,
   },
   { 
     name: 'Warren Lebovics',
@@ -182,7 +182,6 @@
     border-radius: 50px
     min-height: max-content
     max-height: 30vh
-    filter: drop-shadow(0px 5px 5px rgba(232, 206, 56, 0.1))
     padding: 25px
 
   .current
@@ -238,8 +237,6 @@
   .card-container
     transform: translateY(50px)
 @media (max-width: 520px)
-  .header
-    color: red
 
   .card
     max-height: 40vh !important  

@@ -11,7 +11,7 @@
       </div>
       
       <div id="explore-btn">
-        <DButton text="Explore further"/>
+        <DButton text="Explore further" class="d-btn"/>
       </div>
     </div>
   </div>
@@ -30,7 +30,7 @@ export default {
   mounted() {
     //gsap.fromTo('.header',{filter: } {opacity: 1, delay: 1, duration: 0.7, y: 0})
     gsap.to('.text', {opacity: 0.999, delay: 2.3, duration: 0.5, y: 0})
-    gsap.to('.d-button', {opacity: 0.999, delay: 2.8, duration: 0.6, y: 0})
+    gsap.to('.d-btn', {opacity: 0.999, delay: 2.8, duration: 0.6, y: 0})
 
     const myText = new SplitType('.header')
     gsap.fromTo('.char',{ opacity: 0}, {  opacity: 1, delay: 0.5, duration: 0.3, stagger: 0.05})
@@ -53,6 +53,7 @@ export default {
   justify-content: center
   align-items: center 
   font-weight: 500
+
 .text-container
   overflow: hidden
 
@@ -68,6 +69,8 @@ export default {
     & > .grey-span
       font-weight: 500
 
+.d-btn
+  padding: 5px 10px
 .header
   text-align: center
 
@@ -87,7 +90,7 @@ export default {
 
 @media (max-width: 1100px)
   .header
-    font-size: 4vh
+    font-size: 3svh
     width: 100% !important
 
 

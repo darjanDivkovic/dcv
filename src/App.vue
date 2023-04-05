@@ -12,7 +12,7 @@
               <a>[Figma] Download CV</a>
             </div>
           </div>
-          <DButton text="Hire Me" class="main-btn" @click.native.prevent="handleHireClick()"/>
+          <DButton text="Hire Me" :style="{'opacity': 1}" @click.native.prevent="handleHireClick()"/>
         </div>
       </div>
 
@@ -322,9 +322,10 @@ body
       text-align: center
       border-top: 1px solid #fff
 
-.main-btn
-  opacity: 1 !important
-    
+.d-btn
+  opacity: 1 
+
+
 .header-right
   display: flex
   & > div

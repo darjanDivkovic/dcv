@@ -115,7 +115,7 @@ h1
   .header
     width: 120%
     transform: translateX(-10%)
-    font-size: 3vh
+    font-size: 3vh !important
   .lower
     margin-top: 130px
     margin-left: 0px
