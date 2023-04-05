@@ -2,7 +2,7 @@
     <div class="recommendations">
       <h1 class="header">Discover why industry professionals recommend me</h1>
       <div id="cards-container">
-        <carousel-3d :width="slidePrefferedWidth" height="600" :display="slidesToShow" :minSwipeDistance="1">
+        <carousel-3d :width="slidePrefferedWidth" :height="slidePrefferedHeight" :display="slidesToShow" :minSwipeDistance="1">
           <slide v-for="(card, index) in PEOPLE" :key="card.name" :index="index">
             <div class="card">
               <div class="card-upper">
@@ -122,6 +122,7 @@
         startX: null,
         scrollLeft: null,
         width: document.body.clientWidth,
+        screenHeight: window.innerHeight,
       }
     },
     components: {
@@ -141,6 +142,9 @@
       },
       slidePrefferedWidth() {
         return this.width < 400 ? this.width - 80 : 600
+      },
+      slidePrefferedHeight() {
+        return this.screenHeight * 0.5
       }
     },
     mounted() {
@@ -162,9 +166,8 @@
     
     & > h1
       text-align: center
-      font-size: 75px
+      font-size: 8vh
       width: 100%
-      line-height: 100px
   
   #cards-container
     margin-bottom: 10px
@@ -225,22 +228,17 @@
     font-size: 15px
     color: rgba(254, 254, 254, 0.8)
 
-@media (max-width: 1200px)
+@media (max-width: 1300px)
   .header
-    font-size: 55px !important
-    line-height: 54px !important
+    font-size: 3vh !important
 
 @media (max-width: 850px)
 
   .header
-    font-size: 45px !important
-    line-height: 50px !important
   .card-container
     transform: translateY(50px)
 @media (max-width: 520px)
   .header
-    font-size: 24px !important
-    line-height: 25px !important
     color: red
 
   .card

@@ -86,7 +86,6 @@ export default {
 
 <style lang="sass" scoped>
 .skills
-  margin-top: 110px
   padding: 0 40px 20px 40px
   position: relative
   height: calc( 100vh - 340px )
@@ -94,27 +93,24 @@ h1
   text-align: left
   margin-bottom: 21px
   padding-bottom: 60px
-  width: 75%
   font-size: 75px
-  line-height: 100px
 
 .header
-  width: 70%
+  width: 100%
+  font-size: 8vh
 .lower
   margin-top: 220px
 
 @media (max-width: 1200px)
   .header
-    width: 100%
-    font-size: 55px
+    width: 100% !important
+    font-size: 4vh
 
   .d-btn
     margin-top: 20px
 
   @media (max-width: 850px)
   .header
-    font-size: 40px
-    line-height: 48px
   .text
     font-size: 14px !important
 
@@ -125,9 +121,6 @@ h1
   .header
     width: 120%
     transform: translateX(-10%)
-    font-size: 24px
-    text-align: center
-    line-height: 35px
 
   .lower
     margin-top: 130px

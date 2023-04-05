@@ -174,13 +174,13 @@ export default {
 
       if (this.touchEndY < this.touchStartY) {
         const calc = this.touchStartY - this.touchEndY
-        const screenHeightPart = this.heightWindow * 0.1
+        const screenHeightPart = this.heightWindow * 0.4
         if(calc > screenHeightPart) this.handleScrollDown()
 
       }
       if (this.touchEndY > this.touchStartY) {
         const calc = this.touchEndY - this.touchStartY
-        const screenHeightPart = this.heightWindow * 0.01
+        const screenHeightPart = this.heightWindow * 0.4
         if(calc > screenHeightPart) this.handleScrollUp()
       }
     },
@@ -409,6 +409,6 @@ export default {
   #footer-section
     padding: 20px 20px 0 20px
   #body-section
-    height: calc(100% - 175px)
+    height: calc(80vh - 30px)
 
 </style>

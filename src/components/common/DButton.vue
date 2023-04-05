@@ -22,6 +22,7 @@ export default {
     line-height: 0
     color: #fff
     padding: 12px 15px !important
+    width: max-content !important
     background: none
     border: 1px solid rgba(86, 81, 81, 0.1)
     border-radius: 5px
@@ -34,7 +35,6 @@ export default {
 
 @media (max-width: 965px)
     .d-button
-        font-size: 14px !important
         padding: 15px 16px
         border-radius: 8px
         margin-top: 5px
@@ -44,9 +44,9 @@ export default {
 
 @media (max-width: 520px)
     .d-button   
-        font-size: 12px !important
         padding: 15px 10px
-        width: max-content
+        display: flex
+        flex-direction: row
 
 </style>
 
