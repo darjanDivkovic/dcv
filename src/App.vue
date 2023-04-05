@@ -249,23 +249,23 @@ body
 
   
 #header-section
-  padding: 30px 40px 0 20px
   display: flex
   justify-content: space-between
   align-items: center
-  
+  border: 1px solid red
+  height: 67px
 #body-section
   flex-grow: 1
-  height: calc(100% - 200px)
+  border: 1px solid green
+  height: calc(100% - 67px - 50px)
   padding: 20px 30px 0 30px
   overflow: hidden
 #footer-section
   position: relative
   display: flex
-  padding: 20px 40px 30px 40px
+  border: 1px solid red
   flex-direction: row
   align-items: center
-
 
 #navbar
   position: absolute
@@ -409,7 +409,6 @@ body
   #header-section
     padding: 5px 20px 0 20px
   #footer-section
-    padding: 20px 20px 0 20px
   #body-section
     height: calc(80vh - 10px)
 
