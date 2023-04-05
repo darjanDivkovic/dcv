@@ -409,6 +409,7 @@ body
         all: unset 
   .github, .linkedin
     height: 18px !important
+    margin-bottom: 30px
 
   #sections-container
     height: 0vh
@@ -417,6 +418,6 @@ body
     padding: 5px 20px 0 20px
   #footer-section
   #body-section
-    height: calc(80vh - 20px)
+    height: calc(80vh - 30px)
 
 </style>
