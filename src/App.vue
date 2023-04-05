@@ -420,6 +420,7 @@ body
   #header-section
     padding: 5px 20px 0 20px
   #footer-section
+    padding: 0 30px 0 20px
   #body-section
     height: calc(80vh - 30px)
 
