@@ -32,6 +32,7 @@ body {
     overflow-y: none !important;
     overflow-x: none !important;
     background-color: #121212;
+    min-height: -webkit-fill-available;
 }
 
 .char {
