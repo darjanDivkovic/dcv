@@ -101,10 +101,12 @@ export default {
   position: relative
   min-width: 17%
   font-weight: 100
+  height: max-content
   align-items: center
 .count-box-top
   display: flex
-  flex-direction: row
+  flex-direction: column
+  line-height: 10px
 .count
   font-size: 80px
   font-weight: 300
@@ -114,14 +116,15 @@ export default {
   padding-top: 25px
   font-weight: 500
   line-height: 0
+  display: none 
 .text
   height: max-content
   font-size: 16px
   min-height: max-content
-  height: 23px
   font-weight: 200
+  margin-top: 10px
   position: absolute
-  bottom: 8px
+  bottom: -5px
   width: max-content
   padding-top: -2px
   border-bottom: 0

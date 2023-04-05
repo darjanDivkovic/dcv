@@ -101,7 +101,7 @@ export default {
 
 @media (max-width: 1200px)
   .header
-    font-size: 3vh
+    font-size: 4vh
   .text
     font-size: 16px !important
 @media (max-width: 850px)

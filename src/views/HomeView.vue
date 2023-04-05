@@ -85,9 +85,9 @@ export default {
     opacity: 0
     transform: translateY(100%)
 
-@media (max-width: 1200px)
+@media (max-width: 1100px)
   .header
-    font-size: 3vh
+    font-size: 4vh
     width: 100% !important
 
 

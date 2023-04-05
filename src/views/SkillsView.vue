@@ -93,7 +93,7 @@ h1
   text-align: left
   margin-bottom: 21px
   padding-bottom: 60px
-  font-size: 7vh
+  font-size: 8vh
 
 .lower
   margin-top: 220px
@@ -101,7 +101,8 @@ h1
 @media (max-width: 1200px)
   .header
     width: 100% !important
-    font-size: 3vh
+    font-size: 5vh
+    margin-top: 5vh
   @media (max-width: 850px)
   .header
   .text
@@ -114,7 +115,7 @@ h1
   .header
     width: 120%
     transform: translateX(-10%)
-
+    font-size: 3vh
   .lower
     margin-top: 130px
     margin-left: 0px
