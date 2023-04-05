@@ -19,6 +19,7 @@ html {
     overflow: hidden !important;
     overflow-y: none !important;
     overflow-x: none !important;
+    min-height: 100svh;
     max-height: -webkit-fill-available !important;
 }
 
@@ -29,6 +30,7 @@ body {
     overflow-y: none !important;
     overflow-x: none !important;
     background-color: #121212;
+    min-height: 100svh;
     max-height: -webkit-fill-available !important;
 }
 
