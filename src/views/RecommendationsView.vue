@@ -47,7 +47,7 @@
   import MilosIcon from '@/assets/recoms/milos.svg'
   import PetarIcon from '@/assets/recoms/petar.svg'
   import WarrenIcon from '@/assets/recoms/warren.svg'
-  import HarshIcon from '@/assets/recom/harsh.svg'
+  import HarshIcon from '@/assets/recoms/harsh.svg'
 
   import { gsap } from 'gsap'
   import { Carousel3d, Slide } from 'vue-carousel-3d';
@@ -116,7 +116,7 @@
     src: HarshIcon,
     position: 'Product @ Pequity',
     relation: 'Harsh worked with Darjan on the same team',
-    comment: `Darjan is a PM’s engineer. I worked closely with him on a greenfield project. Right from backlog grooming to product launch he was a terrific partner, customer centric and delivered big time. I highly recommend him and would hire myself if the opportunity presents in the future.`,
+    comment: `Darjan is a PM's engineer. I worked closely with him on a greenfield project. Right from backlog grooming to product launch he was a terrific partner, customer centric and delivered big time. I highly recommend him and would hire myself if the opportunity presents in the future.`,
   },
   ]
 
