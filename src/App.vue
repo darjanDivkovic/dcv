@@ -245,7 +245,7 @@ body
 #sections-container
   display:flex
   flex-direction: column
-  height: 96vh
+  height: 88vh
 
   
 #header-section
@@ -257,6 +257,7 @@ body
 #body-section
   flex-grow: 1
   height: calc(86%)
+  padding: 0 20px
   overflow: hidden
 #footer-section
   position: relative
