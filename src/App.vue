@@ -252,20 +252,17 @@ body
   display: flex
   justify-content: space-between
   align-items: center
-  border: 1px solid red
   max-height: 7%
 #body-section
   flex-grow: 1
-  border: 1px solid green
-  height: calc(100% - 7% - 5%) !important
+  height: calc(88%)
   overflow: hidden
 #footer-section
   position: relative
   display: flex
-  border: 1px solid red
   flex-direction: row
   align-items: center
-  max-height: 5%
+  height: 5%
 
 #navbar
   position: absolute
