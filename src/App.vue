@@ -232,11 +232,10 @@ export default {
   src: url(../public/Montserrat.ttf) format("truetype")
 
 #app 
+  min-height: -webkit-fill-available !important
   font-family: 'primary'
   position: relative
   width: auto
-  max-height: 100%
-  min-height: 100%
 
 #sections-container
   display:flex
