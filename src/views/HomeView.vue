@@ -11,7 +11,7 @@
       </div>
       
       <div id="explore-btn">
-        <DButton class="d-btn" text="Explore further"/>
+        <DButton text="Explore further"/>
       </div>
     </div>
   </div>
@@ -87,22 +87,8 @@ export default {
 
 @media (max-width: 1200px)
   .header
-    font-size: 4vh
+    font-size: 3vh
     width: 100% !important
-  .text
 
-  .d-btn
-    margin-top: 20px
 
-@media (max-width: 850px)
-  .header
-  .text
-
-@media (max-width: 520px)
-  .header
-
-  .text
-
-  .d-btn
-    margin-top: 12px
 </style>

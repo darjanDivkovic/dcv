@@ -86,7 +86,6 @@ export default {
   width: 100%
   padding: 0 33px
   font-size: 75px
-  line-height: 100px
 
 .count-container
   max-height: 30vh
@@ -126,7 +125,6 @@ export default {
   width: max-content
   padding-top: -2px
   border-bottom: 0
-  line-height: 24px
 
 .company-container
   margin-top: 7vh
@@ -167,7 +165,6 @@ export default {
     .count
       min-width: 20%
       font-size: 50px
-      line-height: 55px
     flex-direction: column
   .header
     font-size: 55px
@@ -175,7 +172,6 @@ export default {
 @media (max-width: 1050px)
   .header
     font-size: 45px
-    line-height: 49px
 
   .company-container
     display: flex
@@ -203,7 +199,6 @@ export default {
   .count
     font-size: 20px !important
     font-weight: 300
-    line-height: 30px
     min-width: 0 !important
     margin-top: -20px
 
@@ -226,7 +221,6 @@ export default {
     width: max-content
     padding-top: -2px
     border-bottom: 0
-    line-height: 24px
 
   
 </style>

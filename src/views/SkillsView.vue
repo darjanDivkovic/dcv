@@ -102,10 +102,6 @@ h1
   .header
     width: 100% !important
     font-size: 3vh
-
-  .d-btn
-    margin-top: 20px
-
   @media (max-width: 850px)
   .header
   .text

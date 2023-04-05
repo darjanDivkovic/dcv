@@ -261,6 +261,5 @@
   .card-lower
     margin-top: -10px
     font-size: 9px
-    line-height: 12px
   </style>
   

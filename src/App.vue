@@ -12,8 +12,7 @@
               <a>[Figma] Download CV</a>
             </div>
           </div>
-          
-          <DButton text="Hire Me" class="d-btn" @click.native.prevent="handleHireClick()"/>
+          <DButton text="Hire Me" @click.native.prevent="handleHireClick()"/>
         </div>
       </div>
 
@@ -185,6 +184,11 @@ export default {
   },
   mounted() {
 
+    // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+    let vh = window.innerHeight * 0.01;
+    // Then we set the value in the --vh custom property to the root of the document
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+
     const index = COLORS.findIndex(page => page.name === this.$route.name)
     this.page_position = index >= 0 ? index : 0
     window.addEventListener('wheel', this.handleWheel)
@@ -315,9 +319,6 @@ export default {
       text-align: center
       border-top: 1px solid #fff
 
-.header-right
-  & > .d-btn
-    opacity: 1 
     
 .header-right
   display: flex
@@ -406,6 +407,6 @@ export default {
   #footer-section
     padding: 20px 20px 0 20px
   #body-section
-    height: calc(80vh - 90px)
+    height: calc(80vh - 10px)
 
 </style>

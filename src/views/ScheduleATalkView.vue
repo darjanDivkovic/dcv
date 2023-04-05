@@ -13,7 +13,7 @@
       </div>
       
       <div id="explore-btn">
-        <DButton class="d-btn" text="Let's Talk !" @click.prevent.native="handleHireClick()"/>
+        <DButton text="Let's Talk !" @click.prevent.native="handleHireClick()"/>
       </div>
     </div>
   </div>
@@ -32,7 +32,7 @@ export default {
   mounted() {
     //gsap.fromTo('.header',{filter: } {opacity: 1, delay: 1, duration: 0.7, y: 0})
     gsap.to('.text', {opacity: 1, delay: 3.2, duration: 0.5, y: 0})
-    gsap.to('.d-btn', {opacity: 1, delay: 3.7, duration: 0.6, y: 0})
+    gsap.to('.d-button', {opacity: 1, delay: 3.7, duration: 0.6, y: 0})
 
     const myText = new SplitType('.header')
     gsap.fromTo('.char',{ opacity: 0}, { opacity: 1, delay: 0.5, duration: 0.3, stagger: 0.05})
@@ -69,8 +69,7 @@ export default {
     font-size: 8vh
     opacity: 0
     transform: translateY(120%)
-    line-height: 30px
-    color: rgba(255, 255, 255, 0.3)
+    color: rgba(255, 255, 255, 0.4)
     & > .purple-span
       color: #6639ED
       font-weight: 600
@@ -94,7 +93,7 @@ export default {
   font-size: 8vh
   & > .char
 #explore-btn
-  margin-top: 20px
+  margin-top: -20px
   overflow: hidden
   & > button
     opacity: 0
@@ -105,10 +104,6 @@ export default {
     font-size: 3vh
   .text
     font-size: 16px !important
-
-  .d-btn
-    margin-top: 20px
-
 @media (max-width: 850px)
   .header
   .text
@@ -119,8 +114,4 @@ export default {
 
   .text
     font-size: 10px !important
-    line-height: 14px !important
-
-  .d-btn
-    margin-top: 12px
 </style>

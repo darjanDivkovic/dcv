@@ -13,13 +13,25 @@
     user-select: none;
 }
 
+html {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    height: calc(var(--vh, 1vh) * 100);
+    overflow: hidden !important;
+    overflow-y: none !important;
+    overflow-x: none !important;
+}
+
 body {
     margin: 0;
     height: 100vh;
     width: 100vw;
-    overflow: hidden;
-    overflow-y: none;
-    overflow-x: none;
+    height: calc(var(--vh, 1vh) * 100);
+    overflow: hidden !important;
+    overflow-y: none !important;
+    overflow-x: none !important;
     background-color: #121212;
 }
 
