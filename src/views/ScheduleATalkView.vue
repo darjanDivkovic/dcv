@@ -109,5 +109,9 @@ export default {
     font-size: 3vh !important 
   .text
     font-size: calc(2vh - 3px)
-
+  .purple-span
+    color: #6639ED
+    font-weight: 200
+  .grey-span
+    font-weight: 200
 </style>
