@@ -54,7 +54,7 @@ export default {
   mounted() {
     const myText = new SplitType('.header')
     gsap.fromTo('.char',{ opacity: 0}, { opacity: 1, delay: 0.5, duration: 0.3, stagger: 0.05})
-    //gsap.fromTo('.count-container', {opacity: 0}, { opacity: 1, delay: 2.4, duration: 0.3})
+    gsap.fromTo('.count-container', {opacity: 0}, { opacity: 1, delay: 2.4, duration: 0.3})
     gsap.from('.animated', {
       textContent: 0,
       duration: 2,
@@ -68,7 +68,7 @@ export default {
         },  
       }
     });
-    //gsap.fromTo('.company-container', { opacity: 0}, { opacity: 1, delay: 5.3, duration: 0.3})
+    gsap.fromTo('.company-container', { opacity: 0}, { opacity: 1, delay: 5.3, duration: 0.3})
 
   },
   beforeDestroy() {
@@ -151,11 +151,10 @@ export default {
     margin: 0 35px
     
 .inos
-  opacity: 0.7 !important
+  opacity: 0.7 
 
 .bild
-  opacity: 0.5 !important
-
+  opacity: 0.5 
 @media (max-width: 1250px)
   .experience
     display: flex
@@ -166,14 +165,14 @@ export default {
       display: grid
       justify-content: space-between
       grid-gap: 10px
-      grid-template-columns: repeat(auto-fill, minmax(150px, 19%))
+      grid-template-columns: repeat(auto-fill, minmax(100px, 15%))
       max-width: 100%
     .count
       min-width: 20%
       font-size: 50px
     flex-direction: column
   .header
-    font-size: 5vh !important
+    font-size: 5vh 
   
 @media (max-width: 1050px)
   .header
@@ -193,26 +192,26 @@ export default {
 @media (max-width: 520px)
   .experience
     .count-container
-      display: grid !important
-      justify-content: center !important
-      margin-top: 50px
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr))
+      display: grid 
+      justify-content: center 
+      margin-top: 30px
+      grid-template-columns: repeat(auto-fit, minmax(100px, 15%))
       max-width: 100%
-     
+      min-width: 120%
+      transform: translateX(-15%)
   .header
-    font-size: 3vh !important
+    font-size: 3vh 
     text-align: center
     transform: translateX(-10%)
   .count
-    font-size: 20px !important
-    font-weight: 300
-    min-width: 0 !important
-    margin-top: -20px
+    font-weight: 100
+    font-size: 2vh 
+    line-height: 25px
 
   .company-container
-    margin-top: 10px
+    margin-top: 15px
     & > img
-      height: 20%
+      transform: scale(0.8)
   .count-box
     max-height: 70px
     &:last-of-type
