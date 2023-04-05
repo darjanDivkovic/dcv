@@ -29,7 +29,7 @@
         <!-- PAGES NAVBAR -->
         <nav id="navbar">
           <router-link v-for="(page, index) in PAGES" :key="page" :to=createLink(page) class="router-link"
-            :class="{ 'active': isActive(PAGE_NAMES[index]) }" @click.native.prevent="handlePageClick(page)">{{
+            :style="{ 'color': isActive(PAGE_NAMES[index]) ? currentLogoHex : '#6c64644d'}" @click.native.prevent="handlePageClick(page)">{{
               PAGE_NAMES[index] }}</router-link>
         </nav>
       </div>
@@ -53,7 +53,7 @@ const COLORS = [
   },
   {
     name: 'skills',
-    hex: '#0E236F',
+    hex: '#1B41CC',
     decimal: 1786316
   },
   {
@@ -97,6 +97,9 @@ export default {
   computed: {
     currentLogoColor() {
       return COLORS.find(color => color.name === this.$route.name).decimal
+    },
+    currentLogoHex() {
+      return COLORS.find(color => color.name === this.$route.name).hex
     }
   },
   methods: {
@@ -311,11 +314,12 @@ body
   text-align: center
   position: relative
   &.active
-    transform: scale(1.3)    
+    transform: scale(1.5)    
     color: rgba(228, 230, 235, 1)
     
     &:after
       content: ''
+      color: inherit
       position: absolute
       bottom: 0px
       left: 50%
