@@ -1,5 +1,6 @@
 <template>
-    <button class="d-button">{{ text }}
+    <button class="d-button">
+        <p>{{ text }}</p>
         <img class="d-button-img" src="@/assets/small_links/handshake.svg" alt="">
     </button>
 </template>

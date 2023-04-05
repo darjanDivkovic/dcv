@@ -149,7 +149,7 @@
     },
     mounted() {
       const myText = new SplitType('.header')
-      gsap.fromTo('.char',{filter: 'blur(6px)', opacity: 0}, { filter: 'blur(0px)', opacity: 1, delay: 1, duration: 0.3, stagger: 0.05})
+      gsap.fromTo('.char',{ opacity: 0}, { opacity: 1, delay: 1, duration: 0.3, stagger: 0.05})
       gsap.fromTo('#cards-container', { opacity: 0}, { opacity: 1, delay: 3.5, duration: 0.5, })
 
       window.addEventListener("resize", this.onresize);

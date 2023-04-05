@@ -53,8 +53,8 @@ export default {
   name: 'ExperienceView',  
   mounted() {
     const myText = new SplitType('.header')
-    gsap.fromTo('.char',{filter: 'blur(6px)', opacity: 0}, { filter: 'blur(0px)', opacity: 1, delay: 0.5, duration: 0.3, stagger: 0.05})
-    gsap.fromTo('.count-container', {filter: 'blur(6px)', opacity: 0}, { filter: 'blur(0px)', opacity: 1, delay: 2.4, duration: 0.3})
+    gsap.fromTo('.char',{ opacity: 0}, { opacity: 1, delay: 0.5, duration: 0.3, stagger: 0.05})
+    gsap.fromTo('.count-container', {opacity: 0}, { opacity: 1, delay: 2.4, duration: 0.3})
     gsap.from('.animated', {
       textContent: 0,
       duration: 2,
@@ -68,7 +68,7 @@ export default {
         },  
       }
     });
-    gsap.fromTo('.company-container', {filter: 'blur(6px)', opacity: 0}, { filter: 'blur(0px)', opacity: 1, delay: 5.3, duration: 0.3})
+    gsap.fromTo('.company-container', { opacity: 0}, { opacity: 1, delay: 5.3, duration: 0.3})
 
   },
   beforeDestroy() {
