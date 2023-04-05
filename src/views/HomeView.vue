@@ -11,7 +11,7 @@
       </div>
       
       <div id="explore-btn">
-        <DButton text="Explore further" class="d-btn"/>
+        <DButton text="Explore further" class="d-btn" @click.native.prevent="handleHireClick()"/>
       </div>
     </div>
   </div>
@@ -36,6 +36,12 @@ export default {
     gsap.fromTo('.char',{ opacity: 0}, {  opacity: 1, delay: 0.5, duration: 0.3, stagger: 0.05})
     //gsap.to('.word', {y: '-5%', stagger: 0.1, duration: 0.4, delay: 2.3, repeat: -1,ease: 'none', yoyo: true})
     //gsap.to('.word', {y: '5%', stagger: 0.1, duration: 0.4, delay: 4.2, repeat: -1,ease: 'none', yoyo: true})
+  },
+  methods: {
+    handleHireClick() {
+      const URL = 'https://calendly.com/darjan-developer/30min'
+      window.open(URL, '_blank')
+    },
   }
 }
 </script>

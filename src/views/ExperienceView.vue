@@ -54,7 +54,7 @@ export default {
   mounted() {
     const myText = new SplitType('.header')
     gsap.fromTo('.char',{ opacity: 0}, { opacity: 1, delay: 0.5, duration: 0.3, stagger: 0.05})
-    gsap.fromTo('.count-container', {opacity: 0}, { opacity: 1, delay: 2.4, duration: 0.3})
+    //gsap.fromTo('.count-container', {opacity: 0}, { opacity: 1, delay: 2.4, duration: 0.3})
     gsap.from('.animated', {
       textContent: 0,
       duration: 2,
@@ -68,7 +68,7 @@ export default {
         },  
       }
     });
-    gsap.fromTo('.company-container', { opacity: 0}, { opacity: 1, delay: 5.3, duration: 0.3})
+    //gsap.fromTo('.company-container', { opacity: 0}, { opacity: 1, delay: 5.3, duration: 0.3})
 
   },
   beforeDestroy() {
@@ -81,11 +81,13 @@ export default {
 <style lang="sass" scoped>
 .experience
   margin-top: 5%
+  padding: 0 30px
 .header
   text-align: left
+  margin-top: 7vh
   width: 100%
   padding: 0 33px
-  font-size: 75px
+  font-size: 8vh
 
 .count-container
   max-height: 30vh
@@ -100,6 +102,7 @@ export default {
   color: rgba(254, 254, 254, 0.4)
   position: relative
   min-width: 17%
+  min-height: 65px
   font-weight: 100
   height: max-content
   align-items: center
@@ -170,7 +173,7 @@ export default {
       font-size: 50px
     flex-direction: column
   .header
-    font-size: 55px
+    font-size: 5vh !important
   
 @media (max-width: 1050px)
   .header
@@ -195,6 +198,7 @@ export default {
       margin-top: 50px
       grid-template-columns: repeat(auto-fit, minmax(100px, 1fr))
       max-width: 100%
+     
   .header
     font-size: 3vh !important
     text-align: center
@@ -207,6 +211,8 @@ export default {
 
   .company-container
     margin-top: 10px
+    & > img
+      height: 20%
   .count-box
     max-height: 70px
     &:last-of-type

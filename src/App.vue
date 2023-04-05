@@ -166,7 +166,9 @@ export default {
     },
     // ************************
     // HANDLE SWIPE UP AND DOWN
-
+    goToSecond() {
+      this.$router.push({ path: `/${PAGES[1]}` })
+    },
     checkDirection() {
 
       if (this.touchEndY < this.touchStartY) {
