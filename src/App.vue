@@ -253,12 +253,11 @@ body
   justify-content: space-between
   align-items: center
   border: 1px solid red
-  height: 67px
+  max-height: 7%
 #body-section
   flex-grow: 1
   border: 1px solid green
-  height: calc(100% - 67px - 50px)
-  padding: 20px 30px 0 30px
+  height: calc(100% - 7% - 5%) !important
   overflow: hidden
 #footer-section
   position: relative
@@ -266,6 +265,7 @@ body
   border: 1px solid red
   flex-direction: row
   align-items: center
+  max-height: 5%
 
 #navbar
   position: absolute
