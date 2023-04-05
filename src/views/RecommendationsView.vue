@@ -227,9 +227,9 @@
     font-size: 15px
     color: rgba(254, 254, 254, 0.8)
 
-@media (max-width: 1300px)
+@media (max-width: 1200px)
   .header
-    font-size: 3vh !important
+    font-size: 5vh !important
 
 @media (max-width: 850px)
 
@@ -237,6 +237,8 @@
   .card-container
     transform: translateY(50px)
 @media (max-width: 520px)
+  .header
+    font-size: 3vh !important
 
   .card
     max-height: 40vh !important  

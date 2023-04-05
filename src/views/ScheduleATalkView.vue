@@ -66,7 +66,7 @@ export default {
 
   & > p
     text-align: center
-    font-size: 8vh
+    font-size: 2vh
     opacity: 0
     transform: translateY(120%)
     color: rgba(255, 255, 255, 0.4)
@@ -79,8 +79,10 @@ export default {
 .d-btn
   padding: 5px 10px
   opacity: 0
+  margin-top: 20px
 .header
   text-align: center
+  font-size: 8vh
   & > div
 
 .green-span
@@ -102,10 +104,10 @@ export default {
     opacity: 0
     transform: translateY(100%)
 
-@media (max-width: 1200px)
+@media (max-width: 520px)
   .header
-    font-size: 3vh !important
+    font-size: 3vh !important 
   .text
-    font-size: calc(2vh - 3px) !important
+    font-size: calc(2vh - 3px)
 
 </style>
