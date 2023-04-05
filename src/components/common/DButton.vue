@@ -1,8 +1,8 @@
 <template>
-    <button class="d-button">
+    <div class="d-button">
         <p>{{ text }}</p>
         <img class="d-button-img" src="@/assets/small_links/handshake.svg" alt="">
-    </button>
+    </div>
 </template>
 
 <script>
@@ -22,7 +22,7 @@ export default {
     align-items: center 
     line-height: 0
     color: #fff
-    padding: 12px 15px !important
+    padding: 5px 10px !important
     width: max-content !important
     background: none
     border: 1px solid rgba(86, 81, 81, 0.1)
@@ -36,9 +36,10 @@ export default {
 
 @media (max-width: 965px)
     .d-button
-        padding: 15px 16px
+        padding: 3px 8px
         border-radius: 8px
         margin-top: 5px
+        min-width: 60px
         max-height: 30px
     .d-button-img
         height: 12px

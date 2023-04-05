@@ -35,7 +35,6 @@
         </nav>
       </div>
     </div>
-    <div class="cursor2"></div>
   </div>
 </template>
 
@@ -43,7 +42,6 @@
 import DLogo from '@/components/common/DLogo.vue';
 import DBackground from './components/common/DBackground.vue';
 import DButton from './components/common/DButton.vue';
-import { initiateCursor } from './helpers/cursor-helper';
 import { gsap } from 'gsap'
 
 const PAGES = ['', 'skills', 'experience', 'recommendations', 'schedule_a_talk'];
@@ -187,7 +185,6 @@ export default {
   },
   mounted() {
 
-    initiateCursor();
     const index = COLORS.findIndex(page => page.name === this.$route.name)
     this.page_position = index >= 0 ? index : 0
     window.addEventListener('wheel', this.handleWheel)
@@ -409,6 +406,6 @@ export default {
   #footer-section
     padding: 20px 20px 0 20px
   #body-section
-    height: calc(80vh - 60px)
+    height: calc(80vh - 80px)
 
 </style>
