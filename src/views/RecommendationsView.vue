@@ -6,12 +6,12 @@
           <slide v-for="(card, index) in PEOPLE" :key="card.name" :index="index">
             <div class="card">
               <div class="card-upper">
-                <img :src="card.src" alt="" class="icon" />
                 <div class="inner">
                   <p class="name">{{ card.name }}</p>
                   <p class="position">{{ card.position }}</p>
                   <p class="relation">{{ card.relation }}</p>
                 </div>
+                <img :src="card.src" alt="" class="icon" />
               </div>
               <div class="card-lower">
                 {{ card.comment }}
@@ -167,6 +167,8 @@
   </script>
 
   <style lang="sass" scoped>
+  .inner
+    margin-right: 10px
   .recommendations
     position: relative
     padding-top: 20px
@@ -205,28 +207,28 @@
 
   .icon
     height: 60px
+    margin-left: auto
+    margin-right: 0px
     width: max-content
-    opacity: 0.8
+    opacity: 0.6
 
   .name
     color: rgba(254, 254, 254, 0.8)
     text-transform: uppercase
     font-weight: 500
     letter-spacing: 3px
-    margin-left: 20px
+    margin-left: auto
     margin-top: 5px
     color: #FFB754
     
   .position
     color: rgba(254, 254, 254, 0.6)
     font-size: 14px
-    margin-left: 20px
     margin-top: -10px
 
   .relation
     color: rgba(254, 254, 254, 0.2)
     font-size: 10px
-    margin-left: 20px
     margin-top: -15px
 
   .card-lower
