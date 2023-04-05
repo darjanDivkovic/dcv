@@ -245,7 +245,7 @@ body
 #sections-container
   display:flex
   flex-direction: column
-  height: 88vh
+  height: 85vh
 
   
 #header-section
