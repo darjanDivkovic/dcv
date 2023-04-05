@@ -231,6 +231,11 @@ export default {
   font-family: 'primary'
   src: url(../public/Montserrat.ttf) format("truetype")
 
+html
+  height: calc(var(--vh, 1vh) * 100)  
+body 
+  height: calc(var(--vh, 1vh) * 100)
+
 #app 
   min-height: -webkit-fill-available !important
   font-family: 'primary'
