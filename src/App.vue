@@ -245,8 +245,7 @@ body
 #sections-container
   display:flex
   flex-direction: column
-  height: 80vh
-
+  height: 100vh
   
 #header-section
   display: flex
@@ -366,6 +365,8 @@ body
       cursor: pointer
 
 @media (max-width: 965px)
+  #sections-container
+
   #navbar
     flex-direction: column
     left: auto
@@ -374,6 +375,7 @@ body
     right: -70px
     bottom: 30px
     padding: 0
+
   .router-link
     margin-left: auto
     padding: 4px 0
@@ -407,6 +409,8 @@ body
   .github, .linkedin
     height: 18px !important
 
+  #sections-container
+    height: 70vh
   #header-section
     padding: 5px 20px 0 20px
   #footer-section
