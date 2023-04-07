@@ -48,6 +48,7 @@
   import PetarIcon from '@/assets/recoms/petar.svg'
   import WarrenIcon from '@/assets/recoms/warren.svg'
   import HarshIcon from '@/assets/recoms/harsh.svg'
+  import AnwarIcon from '@/assets/recoms/anwar.svg'
 
   import { gsap } from 'gsap'
   import { Carousel3d, Slide } from 'vue-carousel-3d';
@@ -118,6 +119,13 @@
     relation: 'Harsh worked with Darjan on the same team',
     comment: `Darjan is a PM's engineer. I worked closely with him on a greenfield project. Right from backlog grooming to product launch he was a terrific partner, customer centric and delivered big time. I highly recommend him and would hire myself if the opportunity presents in the future.`,
   },
+  { 
+    name: 'Mohamed Anwer',
+    src: AnwarIcon,
+    position: 'Senior Software Engineer at Pequity',
+    relation: 'Mohamed worked with Darjan on the same team',
+    comment: `I had the pleasure of working with Darjan for 6 months, and during that time, I was consistently impressed by his productivity and speed. Darjan has a deep understanding of web design and development concepts and tools, and his ability to solve complex problems in a timely manner is truly exceptional.Despite the short time we worked together, I have no doubt that Darjan would be an asset to any team lucky enough to work with him. He is hardworking, dedicated, and always striving to improve his skills.`,
+  },
   ]
 
   export default {
@@ -169,6 +177,7 @@
   <style lang="sass" scoped>
   .inner
     margin-right: 10px
+    margin-left: 20px
   .recommendations
     position: relative
     padding-top: 20px
