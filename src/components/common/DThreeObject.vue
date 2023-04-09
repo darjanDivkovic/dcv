@@ -62,8 +62,8 @@ export default {
     },
     animate: function () {
       requestAnimationFrame(this.animate);
-      this.mesh.rotation.y += 0.002;
-      this.mesh.rotation.x -= 0.002;
+      this.mesh.rotation.y += 0.0015;
+      this.mesh.rotation.x -= 0.0015;
       this.renderer.render(this.scene, this.camera);
     }
   },
@@ -82,7 +82,7 @@ export default {
       align-items: center
       width: max-content
       position: absolute
-      opacity: 0.4
+      opacity: 0.2
       height: 60px
       & > div
         font-family: 'secondary'

@@ -21,10 +21,12 @@ export default {
   align-items: center
   border-radius: 10px
   flex-direction: row
+  cursor:  pointer !important
+
   & > p 
     margin-right: 10px
     
-    padding: 0 4.5vh 0 12px
+    padding: 0 4.5vh 0 14px
     font-size: 2vh !important
     margin: 0
     position: relative

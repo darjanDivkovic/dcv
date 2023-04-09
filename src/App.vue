@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <DBackground :position="page_position" :color="currentLogoColor"/>
+    <DParticles :color="currentLogoHex"/>
     <div id="sections-container">
       <div id="header-section">
         <DLogo :color="currentLogoColor" />
@@ -28,7 +29,7 @@
         </div>
         <!-- PAGES NAVBAR -->
         <nav id="navbar">
-          <router-link v-for="(page, index) in PAGES" :key="page" :to=createLink(page) class="router-link"
+          <router-link v-for="(page, index) in PAGES" :key="page" :to=createLink(page) class="router-link" :class="{isActive : isActive(PAGE_NAMES[index])}"
             :style="{ 'color': isActive(PAGE_NAMES[index]) ? currentLogoHex : '#6c64644d'}" @click.native.prevent="handlePageClick(page)">{{
               PAGE_NAMES[index] }}</router-link>
         </nav>
@@ -40,6 +41,7 @@
 <script>
 import DLogo from '@/components/common/DLogo.vue';
 import DBackground from './components/common/DBackground.vue';
+import DParticles from '@/components/common/DParticles.vue';
 import DButton from './components/common/DButton.vue';
 import { gsap } from 'gsap'
 
@@ -92,6 +94,7 @@ export default {
   components: {
     DLogo,
     DBackground,
+    DParticles,
     DButton,
   },
   computed: {
@@ -299,6 +302,7 @@ body
     cursor: pointer
     filter: brightness(600%) 
 
+
 .router-link
   all: unset
   transition: all 0.3s
@@ -313,24 +317,14 @@ body
   transform: scale(1)
   text-align: center
   position: relative
-  &.active
-    transform: scale(1.5)    
-    color: rgba(228, 230, 235, 1)
-    
-    &:after
-      content: ''
-      color: inherit
-      position: absolute
-      bottom: 0px
-      left: 50%
-      transform: translate(-50%)
-      width: 100%
-      text-align: center
-      border-top: 1px solid #fff
+  &.isActive
+    transform: scale(1.2)
 
 .d-btn
   opacity: 1 
 
+button
+  cursor:  pointer !important
 
 .header-right
   display: flex
@@ -389,8 +383,9 @@ body
     padding: 4px 0
     font-size: 16px
     text-align: right
-    &.active
-      transform: translateX(-2%)
+    &.isActive
+      transform: translateX(-15px) scale(1.2)
+
       &:after
         all: unset 
 
