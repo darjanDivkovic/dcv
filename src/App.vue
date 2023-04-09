@@ -384,7 +384,7 @@ button
     font-size: 16px
     text-align: right
     &.isActive
-      transform: translateX(-15px) scale(1.2)
+      transform: translateX(-10%) scale(1.2)
 
       &:after
         all: unset 
