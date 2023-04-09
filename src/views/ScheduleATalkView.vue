@@ -78,8 +78,8 @@ export default {
 
 .d-btn
   padding: 5px 10px
-  opacity: 0
-  margin-top: 20px
+  margin-top: 50px 
+
 .header
   text-align: center
   font-size: 8vh
@@ -101,7 +101,6 @@ export default {
   margin-top: -20px
   overflow: hidden
   & > button
-    opacity: 0
     transform: translateY(100%)
 
 @media (max-width: 520px)

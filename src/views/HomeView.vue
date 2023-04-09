@@ -77,6 +77,7 @@ export default {
 
 .d-btn
   padding: 5px 10px
+  margin-top: 20px
 .header
   text-align: center
 

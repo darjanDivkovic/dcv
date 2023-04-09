@@ -14,7 +14,7 @@ export default {
 <style lang="sass" scoped>
 .d-button
   color: #fff
-  border: 1px solid rgba(86, 81, 81, 0.1)
+  border: 2px solid rgba(86, 81, 81, 0.3)
   display: flex
   opacity: 0
   justify-items: center
