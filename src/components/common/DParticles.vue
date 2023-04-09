@@ -5,7 +5,7 @@
         :particleOpacity="0.1"
         :particlesNumber="10"
         shapeType="circle"
-        :particleSize="5"
+        :particleSize="particleSize"
         linesColor="#dedede"
         :linesWidth="1"
         :lineLinked="false"
@@ -24,15 +24,28 @@
 <script>
 export default {
     name: 'DParticles',
+    props: ['windowh'],
+    computed: {
+        particleSize() {
+            return this.windowh > 1200 ? this.windowh * 0.001 : this.windowh * 0.006
+        },
+        particlesNumber() {
+            return this.windowh > 1200 ? 10 : 20
+        }
+    }
 }
 </script>
 
 <style lang="sass" scoped>
 .particles-container
     position: absolute !important
-    z-index: -1
+    z-index: 0
     top: -4vh
     left: 0
-    width: 99vw
-    height: 101vh
+    width: 100vw !important
+    height: 101vh !important
+
+#particles-js
+    width: 100vw !important
+    height: 101vh !important
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <DBackground :position="page_position" :color="currentLogoColor"/>
-    <DParticles :color="currentLogoHex"/>
+    <DParticles :color="currentLogoHex" :windowh="heightWindow"/>
     <div id="sections-container">
       <div id="header-section">
         <DLogo :color="currentLogoColor" />
