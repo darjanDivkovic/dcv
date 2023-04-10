@@ -35,6 +35,15 @@
         </div>
       -->
       </div>
+      <div class="chevrons-container">
+        <div class="left-chev" :style="{'transform': `rotate(90deg)`}">
+          <DChevron :isGold="true"/>
+        </div>
+        <p>Slide to reveal more cards!</p>
+        <div class="right-chev" :style="{'transform': `rotate(-90deg)`}">
+          <DChevron :isGold="true"/>
+        </div>
+      </div>
     </div>
   </template>
   
@@ -53,6 +62,8 @@
   import { gsap } from 'gsap'
   import { Carousel3d, Slide } from 'vue-carousel-3d';
   import SplitType from 'split-type'
+
+  import DChevron from '@/components/common/DChevron.vue'
 
   const PEOPLE = [
   { 
@@ -144,6 +155,7 @@
     components: {
       Carousel3d,
       Slide,
+      DChevron,
     },
     methods: {
       onresize() {
@@ -165,9 +177,9 @@
     },
     mounted() {
       const myText = new SplitType('.header')
-      gsap.fromTo('.char',{ opacity: 0}, { opacity: 1, delay: 1, duration: 0.3, stagger: 0.05})
+      gsap.fromTo('.char',{ opacity: 0}, { opacity: 1, delay: 1, duration: 0.3, stagger: 0.05 })
       gsap.fromTo('#cards-container', { opacity: 0}, { opacity: 1, delay: 3.5, duration: 0.5, })
-
+      gsap.fromTo('.chevrons-container', { opacity: 0}, { opacity: 1, delay: 4, duration: 0.3, })
       window.addEventListener("resize", this.onresize);
 
     },
@@ -202,6 +214,21 @@
     min-height: max-content
     max-height: 30vh
     padding: 25px
+
+  .chevrons-container
+    line-height: 10px
+    opacity: 0
+    position: absolute
+    left: 50%
+    transform: translateX(-80%)
+    bottom: 50px
+    width: 100px
+    display: flex
+    & > p
+      min-width: max-content
+      margin-top: -5px
+      font-size: 10px
+      color: rgba(254, 254, 254, 0.5)
 
   .current
     filter: brightness(100%) !important
@@ -245,6 +272,10 @@
     text-align: center
     font-size: 15px
     color: rgba(254, 254, 254, 0.8)
+
+.left-chev, .right-chev
+  position: relative
+  height: max-content
 
 @media (max-width: 1200px)
   .header
