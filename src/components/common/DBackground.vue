@@ -129,8 +129,8 @@ export default {
 
 @media (max-width: 520px)
 #d-background
-  height: 107vh
-  top: -7vh
+  height: 112vh
+  top: -11vh
 </style>
 
 PURPLE

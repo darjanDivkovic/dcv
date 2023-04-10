@@ -11,7 +11,6 @@
       </div>
       
       <div id="explore-btn">
-        <DButton text="Explore further" class="d-btn" @click.native.prevent="handleHireClick()"/>
       </div>
     </div>
   </div>
@@ -39,8 +38,7 @@ export default {
   },
   methods: {
     handleHireClick() {
-      const URL = 'https://calendly.com/darjan-developer/30min'
-      window.open(URL, '_blank')
+      this.$router.push({ path: `/skills` })
     },
   }
 }

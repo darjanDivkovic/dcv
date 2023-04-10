@@ -421,6 +421,6 @@ button
   #footer-section
     padding: 0 30px 0 20px
   #body-section
-    height: calc(80vh - 50px)
+    height: calc(76vh - 0px)
 
 </style>
