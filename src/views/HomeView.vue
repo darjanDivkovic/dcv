@@ -10,7 +10,7 @@
          specializing in delivering pixel-perfect Front End!</p>
       </div>
       <div class="chevron-container">
-        <p class="info">🛈 Scroll to reveal more pages!</p>
+        <p class="info">Scroll to reveal more pages</p>
         <DChevron/>
       </div>
     </div>

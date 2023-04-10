@@ -39,7 +39,7 @@
         <div class="left-chev" :style="{'transform': `rotate(90deg)`}">
           <DChevron :isGold="true"/>
         </div>
-        <p>Slide to reveal more cards!</p>
+        <p>Swipe to reveal more cards!</p>
         <div class="right-chev" :style="{'transform': `rotate(-90deg)`}">
           <DChevron :isGold="true"/>
         </div>
@@ -280,6 +280,9 @@
 @media (max-width: 1200px)
   .header
     font-size: 5vh !important
+
+  .chevrons-container
+    bottom: 15%
 
 @media (max-width: 850px)
 
