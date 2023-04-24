@@ -422,5 +422,6 @@ button
     padding: 0 30px 0 20px
   #body-section
     height: calc(85vh - 0px)
-
+    @supports (-webkit-touch-callout: none)
+      height: calc(75vh - 0px)
 </style>
