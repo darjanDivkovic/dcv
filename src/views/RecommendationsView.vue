@@ -187,6 +187,10 @@
   </script>
 
   <style lang="sass" scoped>
+
+  .header
+    text-transform: uppercase
+    
   .inner
     margin-right: 10px
     margin-left: 20px

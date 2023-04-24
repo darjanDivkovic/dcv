@@ -6,7 +6,9 @@
     
 <script>
 import * as Three from 'three'
-
+import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass'
+import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer'
+import { UnrealBloomPass} from 'three/examples/jsm/postprocessing/UnrealBloomPass'
 export default {
   name: 'DThreeObject',
   props: ['color', 'top', 'bottom', 'right', 'left'],
@@ -16,6 +18,9 @@ export default {
       scene: null,
       renderer: null,
       mesh: null,
+      renderPass: null,
+      composer: null,
+      bloomPass: null,
     }
   },
   watch: {
@@ -47,6 +52,18 @@ export default {
       this.renderer.setSize(container.clientWidth, container.clientHeight);
       container.appendChild(this.renderer.domElement);
 
+      this.renderScene = new RenderPass(this.scene, this.camera)
+      this.composer = new EffectComposer(this.renderer)
+      this.composer.addPass(this.renderScene)
+
+      const bloomPass = new UnrealBloomPass(
+        new  Three.Vector2(window.innerWidth, window.innerHeight),
+        3,
+        1,
+        0.1
+      )
+
+      this.composer.addPass(bloomPass)
     },
     createMesh(color, rotationX, rotationY) {
       let geometry = new Three.RingGeometry(0, 1, 10);
@@ -64,7 +81,8 @@ export default {
       requestAnimationFrame(this.animate);
       this.mesh.rotation.y += 0.0015;
       this.mesh.rotation.x -= 0.0015;
-      this.renderer.render(this.scene, this.camera);
+      // this.renderer.render(this.scene, this.camera);
+      this.composer.render()
     }
   },
   mounted() {

@@ -1,13 +1,3 @@
-@font-face {
-    font-family: 'primary';
-    src: url('/portfolio/public/Montserrat.ttf');
-}
-
-@font-face {
-    font-family: 'secondary';
-    src: url('/portfolio/public/MontserratAlternates.ttf');
-}
-
 * {
     user-select: none;
 }

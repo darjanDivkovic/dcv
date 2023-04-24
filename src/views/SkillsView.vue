@@ -1,6 +1,6 @@
 <template>
   <div class="skills">
-    <h1 class="header">Web developer with a plethora of Tech Skills</h1>
+    <h1 class="header">Developer with a plethora of Tech Skills</h1>
     <DInfiniteSlider :skills="SKILLS[0]" class="upper"></DInfiniteSlider>
     <DInfiniteSlider :skills="SKILLS[1]" class="lower"></DInfiniteSlider>
     </div>
@@ -97,6 +97,10 @@ h1
 
 .lower
   margin-top: 220px
+
+.header
+  text-transform: uppercase
+  max-width: 70%
 
 @media (max-width: 1200px)
   .header

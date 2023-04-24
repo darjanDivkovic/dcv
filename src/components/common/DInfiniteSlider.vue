@@ -83,7 +83,6 @@ export default {
   & > img
 
 .img-box
-  border: 1px solid #201E1E
   position: relative
   border-radius: 5px
   height: 100px
@@ -91,11 +90,11 @@ export default {
   display: flex
   align-items: center
   justify-content: center
-  background-color: rgba(18, 18, 18, 0.5)
   & > img
     position: absolute
     transform: scale(1)
-    opacity: 0.8
+    opacity: 1
+    
 
 @media (max-width: 520px)
 

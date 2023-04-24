@@ -88,6 +88,7 @@ export default {
   width: 100%
   padding: 0 33px
   font-size: 8vh
+  text-transform: uppercase
 
 .count-container
   max-height: 30vh

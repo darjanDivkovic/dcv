@@ -83,6 +83,7 @@ export default {
 .header
   text-align: center
   font-size: 8vh
+  text-transform: uppercase
   & > div
 
 .green-span

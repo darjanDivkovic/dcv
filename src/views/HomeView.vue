@@ -72,7 +72,7 @@ export default {
     color: rgba(255, 255, 255, 0.3)
     & > .purple-span
       color: #6639ED
-      font-weight: 500
+      font-weight: 700
     & > .grey-span
       font-weight: 500
 .d-btn
@@ -80,7 +80,7 @@ export default {
   margin-top: 20px
 .header
   text-align: center
-
+  text-transform: uppercase
 .chevron-container
   position: relative
   display: flex
